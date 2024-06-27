@@ -160,15 +160,15 @@ async def on_message(message):
                     await message.channel.send("You took too long to choose a build.")
             
             elif response.content.lower() in ['2', 'bs', 'blacksmith', 'blacksmithing']:
-    blacksmith_embed = discord.Embed(
-        title='Blacksmithing',
-        description='Choose a blacksmithing category:',
-        color=discord.Color.orange()
-    )
-    blacksmith_embed.add_field(name='1. Crafting', value="Crafting in the game involves creating weapons from materials. Player-crafted equipment emphasizes ATK, stability, and DEF stats. Rather than predefined stats, items feature potential points that can be converted into statistics (refer to section C). To engage in crafting, players require the 'Create Equipment' EX Skill, which unlocks the crafting menu. Advancing this skill enhances crafting success rates. Notably, skills such as 'Careful Creation' and 'Expert's Creation,' when maxed at level 10, increase an item's potential by 10% (rounded down).")
-    blacksmith_embed.add_field(name='2. Refine', value='Refining in the game strengthens weapons or armor. Each +N refine for weapons increases damage by N^2% and adds +N bonus attack. For armor, additional gear, and shields, each refine reduces damage taken by 1%. For example, refining a weapon with 100 base attack to +6 results in +(6^2% × 100) and +6 bonus attack, totaling 142 attack power.')
-    blacksmith_embed.add_field(name='3. Statting', value='Statting in the game converts potential points into stat points for player-crafted equipment, with up to 8 customizable stat slots and limits based on character level, total Customization skill levels, and stat caps.')
-    blacksmith_embed.add_field(name='4. Enhancement', value='Information on enhancements')
+blacksmith_embed = discord.Embed(
+title='Blacksmithing',
+description='Choose a blacksmithing category:',
+color=discord.Color.orange()
+)
+blacksmith_embed.add_field(name='1. Crafting', value="Crafting in the game involves creating weapons from materials. Player-crafted equipment emphasizes ATK, stability, and DEF stats. Rather than predefined stats, items feature potential points that can be converted into statistics (refer to section C). To engage in crafting, players require the 'Create Equipment' EX Skill, which unlocks the crafting menu. Advancing this skill enhances crafting success rates. Notably, skills such as 'Careful Creation' and 'Expert\'s Creation,' when maxed at level 10, increase an item\'s potential by 10% (rounded down).")
+blacksmith_embed.add_field(name='2. Refine', value='Refining in the game strengthens weapons or armor. Each +N refine for weapons increases damage by N^2% and adds +N bonus attack. For armor, additional gear, and shields, each refine reduces damage taken by 1%. For example, refining a weapon with 100 base attack to +6 results in +(6^2% × 100) and +6 bonus attack, totaling 142 attack power.')
+blacksmith_embed.add_field(name='3. Statting', value='Statting in the game converts potential points into stat points for player-crafted equipment, with up to 8 customizable stat slots and limits based on character level, total Customization skill levels, and stat caps.')
+blacksmith_embed.add_field(name='4. Enhancement', value='Information on enhancements')
 
     await message.channel.send(embed=blacksmith_embed)
 
