@@ -309,18 +309,14 @@ async def on_message(message):
                                     
                             except asyncio.TimeoutError:
                                 await message.channel.send("You took too long to choose a refinement category.")
-                                    
-                                    
-                                    
-   
-            elif response.content.lower() == '3':
-                await message.channel.send("This section is under development! uwu")
-            elif response.content.lower() == '4':
-                await message.channel.send("This section is under development! uwu")
+                    elif response.content.lower() == '3':
+                        await message.channel.send("This section is under development! uwu")
+                    elif response.content.lower() == '4':
+                        await message.channel.send("This section is under development! uwu")
+                except asyncio.TimeoutError:
+                    await message.channel.send("You took too long to choose category.")
                 
-        except asyncio.TimeoutError:
-            await message.channel.send(f"An error occurred: {str(e)}")
-        finally:
-            await bot.process_commands(message)
-bot.run(TOKEN)
+ await bot.process_commands(message)
+    
+  bot.run(TOKEN)
 
