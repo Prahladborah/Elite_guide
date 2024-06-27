@@ -305,7 +305,10 @@ async def on_message(message):
                                     await message.channel.send("The enhancement section is currently under development. Please check back later.")
                                     
                                 else:
-                                    await message.channel.send("Invalid choice. Please choose a valid option from 1 to 4") 
+                                    await message.channel.send("Invalid choice. Please choose a valid option from 1 to 4")
+                                    
+                            except asyncio.TimeoutError:
+                                await message.channel.send("You took too long to choose a refinement category.")
                                     
                                     
                                     
@@ -324,3 +327,4 @@ await bot.process_commands(message)
                            
 
 bot.run(TOKEN)
+
