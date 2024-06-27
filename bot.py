@@ -312,19 +312,16 @@ async def on_message(message):
                                     
                                     
                                     
-    elif response.content.lower() == '3':
-        await message.channel.send("This section is under development! uwu")
-        
-    elif response.content.lower() == '4':
-        await message.channel.send("This section is under development! uwu")
-        
-    else:
-        
-        await message.channel.send("Enter the numbers and try again muwhahahahaha... type \"hey elite\" to trigger from beginning")
-        
-    
-await bot.process_commands(message)
-                           
+   
+            elif response.content.lower() == '3':
+                await message.channel.send("This section is under development! uwu")
+            elif response.content.lower() == '4':
+                await message.channel.send("This section is under development! uwu")
+                
+        except asyncio.TimeoutError:
+            
+            await message.channel.send(f"An error occurred: {str(e)}")
 
+            
 bot.run(TOKEN)
 
