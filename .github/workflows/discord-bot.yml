@@ -26,8 +26,8 @@ jobs:
 
     - name: Deploy bot
       env:
-        DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}  # Ensure DISCORD_TOKEN is set in your GitHub repository secrets
+        DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
       run: |
-        python bot.py  # Replace with your bot file name
+        python bot.py
 
 
