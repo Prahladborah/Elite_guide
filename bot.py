@@ -4,17 +4,11 @@ from discord.ext import commands
 from dotenv import load_dotenv
 import asyncio
 
-# Load environment variables from .env file (useful for local development)
 load_dotenv()
 
-# Get the token from environment variables
 TOKEN = os.getenv('DISCORD_TOKEN')
-
-# Check if the token is loaded correctly
 if TOKEN is None:
     raise ValueError("DISCORD_TOKEN environment variable is not set")
-
-# Define leveling information
 leveling_info = {
     range(1, 34): ("Nisel Mountain: Mountainside", "Shell Mask", "Earth"),
     range(34, 50): ("Ancient Empress Tomb: Area 1", "Bone Dragonewt", "Dark"),
@@ -44,14 +38,11 @@ leveling_info = {
     range(295, 300): ("Boss colon", "Are you baka?", "Do mq shoo"),
 }
 
-# Helper function to get leveling information
 def get_leveling_info(level):
     for level_range, info in leveling_info.items():
         if level in level_range:
             return info
     return ("Level out of range", "Please provide a valid level", "N/A")
-
-# Define the bot
 intents = discord.Intents.default()
 intents.messages = True
 intents.message_content = True
@@ -197,8 +188,7 @@ async def on_message(message):
                         try:
                             
                             crafting_response = await bot.wait_for('message', check=check, timeout=15.0)
-                            
-                            
+                             
                             intro_info = ("For effective smithing, focus on maxing Create Equipment, Careful Creation, and Expert's Creation.\n\n"
                                           "Then, learn Anvil skills as needed to improve your proficiency.\n\n"
                                           "Each character has a Blacksmith Proficiency Level, visible under Menu > Character > Stat > Production.\n\n"
@@ -208,7 +198,6 @@ async def on_message(message):
                                           "Each item has both a level and a difficulty, each serving distinct purposes. The item's level determines how much proficiency experience (EXP) you gain when crafting it. To efficiently level up your proficiency, choose items with levels higher than your current proficiency level. If an item's level is lower than your proficiency level by 11 or more, no EXP is gained.\n\n\n"
                                           "An item's difficulty indicates how challenging it is to craft. You cannot craft an item if its difficulty exceeds your own.\n"
                                           "Crafted items' potential increases with the crafter's base stat, without bonuses from equipment, skills, food, or avatars. For certain items, each 10 points in this stat add 1 potential.\n\n")
-                            
                             
                             crafting_info = {
                                 
@@ -246,9 +235,7 @@ async def on_message(message):
                                 '10': f"Here's information on crafting additionals:\n"
 
                                 "Currently Crafting additionals are not possible with players crafting skills.\n\n You can Either get it by farming or from NPC Blacksmiths from safetowns"
-
                             }
-                            
                             try:
                                 
                                 response_text = crafting_info.get(crafting_response.content.lower(), "Please provide the number from the list to see the crafting info. and Try again type \"hey Elite\"")
@@ -309,15 +296,9 @@ async def on_message(message):
                                     
                             except asyncio.TimeoutError:
                                 await message.channel.send("You took too long to choose a refinement category.")
-
-            
-
-           
             else:
                 await message.channel.send("Invalid choice. Please choose a valid option from 1 to 2")
         except asyncio.TimeoutError:
             await message.channel.send("You took too long to choose a category.")
-
-    await bot.process_commands(message)
-
+            await bot.process_commands(message)
 bot.run(TOKEN)                        
