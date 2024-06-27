@@ -95,8 +95,8 @@ async def on_message(message):
         )
         embed.add_field(name='1. Builds', value='Learn about different builds.')
         embed.add_field(name='2. Blacksmithing', value='Information on weapon forging, armor crafting, etc.')
-        embed.add_field(name='3. Synthesis', value='This section is currently not available...Stay tuned')
-        embed.add_field(name='4. Equipment', value='This section is currently not available...Stay tuned')
+        embed.add_field(name='3. Synthesis', value='Material and synthesis, enchantments.')
+        embed.add_field(name='4. Equipment', value='Information on various types of equipment.')
 
         help_message = await message.channel.send(embed=embed)
 
@@ -298,16 +298,27 @@ async def on_message(message):
                                         
                                         await message.channel.send("You took too long to choose a refinement category.")
                                         
-                    elif response.content.lower() == '3':
-                        await message.channel.send("This section is under development! uwu")
-                    elif response.content.lower() == '4':
-                        await message.channel.send("This section is under development! uwu")
-            else:
-                await message.channel.send("This section is under development! uwu")
+                                elif blacksmith_response.content.lower() == '3' or blacksmith_response.content.lower() == 'statting': 
+                                    await message.channel.send("The statting section is currently under development. Please check back later.")
+                                
+                                elif blacksmith_response.content.lower() == '4' or blacksmith_response.content.lower() == 'enhancement':
+                                    await message.channel.send("The enhancement section is currently under development. Please check back later.")
+                                    
+                                else:
+                                    await message.channel.send("Invalid choice. Please choose a valid option from 1 to 4")
+                                    
+                            except asyncio.TimeoutError:
+                                await message.channel.send("You took too long to choose a refinement category.")
 
+            elif response.content.lower() == '3':
+                await message.channel.send("This section is under development! uwu")
+            elif response.content.lower() == '4':
+                await message.channel.send("This section is under development! uwu")
+            else:
+                await message.channel.send("Invalid choice. Please choose a valid option from 1 to 4")
         except asyncio.TimeoutError:
-            await message.channel.send("You took too long to respond.")
+            await message.channel.send("You took too long to choose a category.")
 
     await bot.process_commands(message)
 
-bot.run(TOKEN)            
+bot.run(TOKEN)                        
