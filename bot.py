@@ -309,8 +309,9 @@ async def on_message(message):
                                     
                             except asyncio.TimeoutError:
                                 await message.channel.send("You took too long to choose a refinement category.")
+                                
            
-
+finally:
 await bot.process_commands(message)
 
 bot.run(TOKEN)
