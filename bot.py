@@ -170,6 +170,7 @@ async def on_message(message):
                 blacksmith_embed.add_field(name='3. Statting', value='Statting in the game converts potential points into stat points for player-crafted equipment, with up to 8 customizable stat slots and limits based on character level, total Customization skill levels, and stat caps.')
                 blacksmith_embed.add_field(name='4. Enhancement', value='Information on enhancements')
                 await message.channel.send(embed=blacksmith_embed)
+                
                 try:
                     
                     blacksmith_response = await bot.wait_for('message', check=check, timeout=15.0)
@@ -213,7 +214,7 @@ async def on_message(message):
                                 
                                 '1': f"Here's information on crafting one-handed swords (ohs):\n{intro_info}\n"
                                 "To craft 1handed sword put STR+DEX in your players stat. \n\n"
-          "Potential = (total no of STR + total no of DEX) / 20",
+                                "Potential = (total no of STR + total no of DEX) / 20",
                                 '2': f"Here's information on crafting two-handed swords (2hs):\n{intro_info}"
                                 "TO craft 2handed swords put Str in your players stat. \n\n"
                                 "Potential = Total no. of Str / 10",
@@ -247,70 +248,78 @@ async def on_message(message):
                                 "Currently Crafting additionals are not possible with players crafting skills.\n\n You can Either get it by farming or from NPC Blacksmiths from safetowns"
 
                             }
-
-                response_text = crafting_info.get(crafting_response.content.lower(), "Please provide the number from the list to see the crafting info. and Try again type ""hey Elite""")
-                await message.channel.send(response_text)
-
-            except asyncio.TimeoutError:
-                await message.channel.send("You took too long to choose a crafting category.")
-
-        elif blacksmith_response.content.lower() == '2' or blacksmith_response.content.lower() == 'refine':
-    refine_embed = discord.Embed(
-        title='Refinement',
-        description='Choose a refinement category:',
-        color=discord.Color.gold()
-    )
-
-    refine_embed.add_field(name='1. Weapon', value='Information on refining weapons')
-    refine_embed.add_field(name='2. Shield, Armour, Additionals', value='Information on refining shields, armor, and additionals')
-
-    await message.channel.send(embed=refine_embed)
-
-    try:
-        refine_response = await bot.wait_for('message', check=check, timeout=15.0)
-
-        refine_info = {
-            '1': "Here's information on refining weapons:\n\n"
-                 "Refining enhances weapons by increasing their damage output and bonus attack.\n"
-                 "Each +N refine adds N^2% damage and +N bonus attack.\n\n"
-                 "Example: A weapon with 100 base attack refined to +6 gains +(6^2% × 100) and +6 bonus attack, totaling 142 attack power.\n\n"
-                 "Character level doesn't affect success rates, but capping TEC is advised for refining, statting, and alchemy. LUK prevents refinement degradation.\n\n"
-                 "For effective refinements (use tech to reach +b) and from (+b to +s) use luck char ",
-            '2': "Here's information on refining shields, armor, and additionals:\n"
-                 "In case of armor, additional, or shields, it will only reduce damage taken from attacks. It won't boost your attacks.\n\n"
-                 "So if you are only focusing on damage, then refine only weapons."
-        }
-
-        response_text = refine_info.get(refine_response.content.lower(), "Please provide a valid number from the list to see the refinement info. Try again.")
-        await message.channel.send(response_text)
-
-    except asyncio.TimeoutError:
-        await message.channel.send("You took too long to choose a refinement category.")
-
-        elif blacksmith_response.content.lower() == '3' or blacksmith_response.content.lower() == 'statting':
-    await message.channel.send("The statting section is currently under development. Please check back later.")
-
-
-        elif blacksmith_response.content.lower() == '4' or blacksmith_response.content.lower() == 'enhancement':
-    await message.channel.send("The enhancement section is currently under development. Please check back later.")
-
-
-        else:
-            await message.channel.send("Invalid choice. Please choose a valid option from 1 to 4")
-
-    except asyncio.TimeoutError:
-        await message.channel.send("You took too long to choose a blacksmithing category.")
-
+                            
+                            try:
+                                
+                                response_text = crafting_info.get(crafting_response.content.lower(), "Please provide the number from the list to see the crafting info. and Try again type \"hey Elite\"")
+                                await message.channel.send(response_text)
+                                
+                            except asyncio.TimeoutError:
+                                
+                                await message.channel.send("You took too long to choose a crafting category.")
+                                
+                                if blacksmith_response.content.lower() == '2' or blacksmith_response.content.lower() == 'refine':
+                                    
+                                    refine_embed = discord.Embed(
+                                        
+                                        
+                                        title='Refinement',
+                                        description='Choose a refinement category:',
+                                        color=discord.Color.gold()
+                                        )
+                                    refine_embed.add_field(name='1. Weapon', value='Information on refining weapons')
+                                    refine_embed.add_field(name='2. Shield, Armour, Additionals', value='Information on refining shields, armor, and additionals')
+                                    await message.channel.send(embed=refine_embed)
+                                    
+                                    
+                                    try:
+                                        
+                                        refine_response = await bot.wait_for('message', check=check, timeout=15.0)
+                                        
+                                        refine_info = {
+                                            
+                                            '1': "Here's information on refining weapons:\n\n"
+                                            "Refining enhances weapons by increasing their damage output and bonus attack.\n"
+                                            "Each +N refine adds N^2% damage and +N bonus attack.\n\n"
+                                            "Example: A weapon with 100 base attack refined to +6 gains +(6^2% × 100) and +6 bonus attack, totaling 142 attack power.\n\n"
+                                            "Character level doesn't affect success rates, but capping TEC is advised for refining, statting, and alchemy. LUK prevents refinement degradation.\n\n"
+                                            "For effective refinements (use tech to reach +b) and from (+b to +s) use luck char.",
+                                            '2': "Here's information on refining shields, armor, and additionals:\n"
+                                            "In case of armor, additional, or shields, it will only reduce damage taken from attacks. It won't boost your attacks.\n\n"
+                                            "So if you are only focusing on damage, then refine only weapons."
+                                            }
+                                        
+                                        
+                                        response_text = refine_info.get(refine_response.content.lower(), "Please provide a valid number from the list to see the refinement info. Try again.")
+                                        
+                                        await message.channel.send(response_text)
+                                        
+                                    except asyncio.TimeoutError:
+                                        
+                                        await message.channel.send("You took too long to choose a refinement category.")
+                                        
+                                elif blacksmith_response.content.lower() == '3' or blacksmith_response.content.lower() == 'statting': 
+                                    await message.channel.send("The statting section is currently under development. Please check back later.")
+                                
+                                elif blacksmith_response.content.lower() == '4' or blacksmith_response.content.lower() == 'enhancement':
+                                    await message.channel.send("The enhancement section is currently under development. Please check back later.")
+                                    
+                                else:
+                                    await message.channel.send("Invalid choice. Please choose a valid option from 1 to 4")
+                                    
+                
             elif response.content.lower() == '3':
                 await message.channel.send("This section is under development! uwu")
             elif response.content.lower() == '4':
-                await message.channel.send("This section is under development! uwu")
+                 await message.channel.send("This section is under development! uwu")
+            
             else:
-                await message.channel.send("Enter the numbers and try again muwhahahahaha... type "hey elite" to trigger from begining")
-
+                await message.channel.send("Enter the numbers and try again muwhahahahaha... type \"hey elite\" to trigger from beginning")
+        
         except asyncio.TimeoutError:
-            await message.channel.send("You took too long to respond.Type "hey elite" to trigger from begining")
-
-    await bot.process_commands(message)
+            await message.channel.send("You took too long to respond. Type \"hey elite\" to trigger from beginning")
+            
+            await bot.process_commands(message)
+                           
 
 bot.run(TOKEN)
