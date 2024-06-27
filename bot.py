@@ -160,84 +160,93 @@ async def on_message(message):
                     await message.channel.send("You took too long to choose a build.")
             
             elif response.content.lower() in ['2', 'bs', 'blacksmith', 'blacksmithing']:
-blacksmith_embed = discord.Embed(
-title='Blacksmithing',
-description='Choose a blacksmithing category:',
-color=discord.Color.orange()
-)
-blacksmith_embed.add_field(name='1. Crafting', value="Crafting in the game involves creating weapons from materials. Player-crafted equipment emphasizes ATK, stability, and DEF stats. Rather than predefined stats, items feature potential points that can be converted into statistics (refer to section C). To engage in crafting, players require the 'Create Equipment' EX Skill, which unlocks the crafting menu. Advancing this skill enhances crafting success rates. Notably, skills such as 'Careful Creation' and 'Expert\'s Creation,' when maxed at level 10, increase an item\'s potential by 10% (rounded down).")
-blacksmith_embed.add_field(name='2. Refine', value='Refining in the game strengthens weapons or armor. Each +N refine for weapons increases damage by N^2% and adds +N bonus attack. For armor, additional gear, and shields, each refine reduces damage taken by 1%. For example, refining a weapon with 100 base attack to +6 results in +(6^2% × 100) and +6 bonus attack, totaling 142 attack power.')
-blacksmith_embed.add_field(name='3. Statting', value='Statting in the game converts potential points into stat points for player-crafted equipment, with up to 8 customizable stat slots and limits based on character level, total Customization skill levels, and stat caps.')
-blacksmith_embed.add_field(name='4. Enhancement', value='Information on enhancements')
-
-    await message.channel.send(embed=blacksmith_embed)
-
-    try:
-        blacksmith_response = await bot.wait_for('message', check=check, timeout=15.0)
-
-        if blacksmith_response.content.lower() == '1' or blacksmith_response.content.lower() == 'crafting':
-            crafting_embed = discord.Embed(
-                title='Crafting',
-                description='Choose a crafting category:',
-                color=discord.Color.blue()
-            )
-            crafting_embed.add_field(name='1. One-Handed Swords (ohs)', value='Information on crafting one-handed swords')
-            crafting_embed.add_field(name='2. Two-Handed Swords (2hs)', value='Information on crafting two-handed swords')
-            crafting_embed.add_field(name='3. Helberds', value='Information on crafting helberds')
-            crafting_embed.add_field(name='4. Katanas', value='Information on crafting katanas')
-            crafting_embed.add_field(name='5. Staffs', value='Information on crafting staffs')
-            crafting_embed.add_field(name='6. Magic Devices', value='Information on crafting magic devices')
-            crafting_embed.add_field(name='7. Bows', value='Information on crafting bows')
-            crafting_embed.add_field(name='8. Bow Guns', value='Information on crafting bow guns')
-            crafting_embed.add_field(name='9. Armours', value='Information on crafting armours')
-            crafting_embed.add_field(name='10. Additionals', value='Information on crafting additionals')
-
-            await message.channel.send(embed=crafting_embed)
-
-            try:
-                crafting_response = await bot.wait_for('message', check=check, timeout=15.0)
-
-                intro_info = ("For effective smithing, focus on maxing Create Equipment, Careful Creation, and Expert's Creation.\n\n"
-    "Then, learn Anvil skills as needed to improve your proficiency.\n\n"
-    "Each character has a Blacksmith Proficiency Level, visible under Menu > Character > Stat > Production.\n\n"
-    "The Blacksmith Proficiency Level can be increased by crafting items, with a default cap of 50.\n\n"
-    "Each level of Novice's, Craftsman's, Blacksmith's, and Master's Anvil skill raises this cap by 5,\n\n"
-    "allowing a maximum cap of 250 when all four skills are maxed, although maxing all four skills immediately is not necessary.\n\n\n"
-    "Each item has both a level and a difficulty, each serving distinct purposes. The item's level determines how much proficiency experience (EXP) you gain when crafting it. To efficiently level up your proficiency, choose items with levels higher than your current proficiency level. If an item's level is lower than your proficiency level by 11 or more, no EXP is gained.\n\n\n"
-    "An item's difficulty indicates how challenging it is to craft. You cannot craft an item if its difficulty exceeds your own.\n"
-    "Crafted items' potential increases with the crafter's base stat, without bonuses from equipment, skills, food, or avatars. For certain items, each 10 points in this stat add 1 potential.\n\n")
-
-crafting_info = {
-    '1': f"Here's information on crafting one-handed swords (ohs):\n{intro_info}\n"
-          "To craft 1handed sword put STR+DEX in your players stat. \n\n"
+                blacksmith_embed = discord.Embed(
+                    title='Blacksmithing',
+                    description='Choose a blacksmithing category:',
+                    color=discord.Color.orange()
+                )
+                blacksmith_embed.add_field(name='1. Crafting', value="Crafting in the game involves creating weapons from materials. Player-crafted equipment emphasizes ATK, stability, and DEF stats. Rather than predefined stats, items feature potential points that can be converted into statistics (refer to section C). To engage in crafting, players require the 'Create Equipment' EX Skill, which unlocks the crafting menu. Advancing this skill enhances crafting success rates. Notably, skills such as 'Careful Creation' and 'Expert\'s Creation,' when maxed at level 10, increase an item\'s potential by 10% (rounded down).")
+                blacksmith_embed.add_field(name='2. Refine', value='Refining in the game strengthens weapons or armor. Each +N refine for weapons increases damage by N^2% and adds +N bonus attack. For armor, additional gear, and shields, each refine reduces damage taken by 1%. For example, refining a weapon with 100 base attack to +6 results in +(6^2% × 100) and +6 bonus attack, totaling 142 attack power.')
+                blacksmith_embed.add_field(name='3. Statting', value='Statting in the game converts potential points into stat points for player-crafted equipment, with up to 8 customizable stat slots and limits based on character level, total Customization skill levels, and stat caps.')
+                blacksmith_embed.add_field(name='4. Enhancement', value='Information on enhancements')
+                await message.channel.send(embed=blacksmith_embed)
+                try:
+                    
+                    blacksmith_response = await bot.wait_for('message', check=check, timeout=15.0)
+                    
+                    if blacksmith_response.content.lower() == '1' or blacksmith_response.content.lower() == 'crafting':
+                        crafting_embed = discord.Embed(
+                            title='Crafting',
+                            description='Choose a crafting category:',
+                            color=discord.Color.blue()
+                        )
+                        crafting_embed.add_field(name='1. One-Handed Swords (ohs)', value='Information on crafting one-handed swords')
+                        crafting_embed.add_field(name='2. Two-Handed Swords (2hs)', value='Information on crafting two-handed swords')
+                        crafting_embed.add_field(name='3. Helberds', value='Information on crafting helberds')
+                        crafting_embed.add_field(name='4. Katanas', value='Information on crafting katanas')
+                        crafting_embed.add_field(name='5. Staffs', value='Information on crafting staffs')
+                        crafting_embed.add_field(name='6. Magic Devices', value='Information on crafting magic devices')
+                        crafting_embed.add_field(name='7. Bows', value='Information on crafting bows')
+                        crafting_embed.add_field(name='8. Bow Guns', value='Information on crafting bow guns')
+                        crafting_embed.add_field(name='9. Armours', value='Information on crafting armours')
+                        crafting_embed.add_field(name='10. Additionals', value='Information on crafting additionals')
+                        
+                        await message.channel.send(embed=crafting_embed)
+                        
+                        try:
+                            
+                            crafting_response = await bot.wait_for('message', check=check, timeout=15.0)
+                            
+                            
+                            intro_info = ("For effective smithing, focus on maxing Create Equipment, Careful Creation, and Expert's Creation.\n\n"
+                                          "Then, learn Anvil skills as needed to improve your proficiency.\n\n"
+                                          "Each character has a Blacksmith Proficiency Level, visible under Menu > Character > Stat > Production.\n\n"
+                                          "The Blacksmith Proficiency Level can be increased by crafting items, with a default cap of 50.\n\n"
+                                          "Each level of Novice's, Craftsman's, Blacksmith's, and Master's Anvil skill raises this cap by 5,\n\n"
+                                          "allowing a maximum cap of 250 when all four skills are maxed, although maxing all four skills immediately is not necessary.\n\n\n"
+                                          "Each item has both a level and a difficulty, each serving distinct purposes. The item's level determines how much proficiency experience (EXP) you gain when crafting it. To efficiently level up your proficiency, choose items with levels higher than your current proficiency level. If an item's level is lower than your proficiency level by 11 or more, no EXP is gained.\n\n\n"
+                                          "An item's difficulty indicates how challenging it is to craft. You cannot craft an item if its difficulty exceeds your own.\n"
+                                          "Crafted items' potential increases with the crafter's base stat, without bonuses from equipment, skills, food, or avatars. For certain items, each 10 points in this stat add 1 potential.\n\n")
+                            
+                            
+                            crafting_info = {
+                                
+                                '1': f"Here's information on crafting one-handed swords (ohs):\n{intro_info}\n"
+                                "To craft 1handed sword put STR+DEX in your players stat. \n\n"
           "Potential = (total no of STR + total no of DEX) / 20",
-    '2': f"Here's information on crafting two-handed swords (2hs):\n{intro_info}"
-          "TO craft 2handed swords put Str in your players stat. \n\n"
-          "Potential = Total no. of Str / 10",
-    '3': f"Here's information on crafting helberds:\n{intro_info}"
-          "To craft helberds put STR+AGI in your players stats. \n\n"
-          "Potential = Total number of STR+AGI / 20",
-    '4': f"Here's information on crafting katanas:\n{intro_info}"
-          "To craft katanas put DEX+AGI in your players stats \n\n"
-          "Potential = Total no of DEX+AGI / 20",
-    '5': f"Here's information on crafting staffs:\n{intro_info}"
-          "To craft staffs put Int in your players stats\n\n"
-          "Potential = Total no of Int / 10",
-    '6': f"Here's information on crafting magic devices:\n{intro_info}"
-          "To craft magic devices put INT+AGI in your players stats \n\n"
-          "Potential = Total no of INT+AGI / 20",
-    '7': f"Here's information on crafting bows:\n{intro_info}"
-          "To craft Bows put STR+DEX in your players stats\n\n"
-          "Potential = Total no of STR+DEX / 20",
-    '8': f"Here's information on crafting bow guns:\n{intro_info}"
-          "To craft bowguns put dex on players stats.\n\n"
-          "Potential = Total no of Dex\10",
-    '9': f"Here's information on crafting armours:\n{intro_info}"
-          "To craft Armours put Vit in your Players stats\n\n"
-          "Potential = Total no of Vit / 10",
-    '10': f"Here's information on crafting additionals:\n"
-           "Currently Crafting additionals are not possible with players crafting skills.\n\n You can Either get it by farming or from NPC Blacksmiths from safetowns"
-}
+                                '2': f"Here's information on crafting two-handed swords (2hs):\n{intro_info}"
+                                "TO craft 2handed swords put Str in your players stat. \n\n"
+                                "Potential = Total no. of Str / 10",
+                                '3': f"Here's information on crafting helberds:\n{intro_info}"
+                                "To craft helberds put STR+AGI in your players stats. \n\n"
+                                "Potential = Total number of STR+AGI / 20",
+                                '4': f"Here's information on crafting katanas:\n{intro_info}"
+                                "To craft katanas put DEX+AGI in your players stats \n\n"
+                                "Potential = Total no of DEX+AGI / 20",
+                                '5': f"Here's information on crafting staffs:\n{intro_info}"
+                                "To craft staffs put Int in your players stats\n\n"
+                                "Potential = Total no of Int / 10",
+                                '6': f"Here's information on crafting magic devices:\n{intro_info}"
+                                "To craft magic devices put INT+AGI in your players stats \n\n"
+                                "Potential = Total no of INT+AGI / 20",
+                                '7': f"Here's information on crafting bows:\n{intro_info}"
+                                "To craft Bows put STR+DEX in your players stats\n\n"
+                                "Potential = Total no of STR+DEX / 20",
+                                '8': f"Here's information on crafting bow guns:\n{intro_info}"
+                                "To craft bowguns put dex on players stats.\n\n"
+                                "Potential = Total no of Dex\10",
+
+                                '9': f"Here's information on crafting armours:\n{intro_info}"
+
+                                "To craft Armours put Vit in your Players stats\n\n"
+
+                                "Potential = Total no of Vit / 10",
+
+                                '10': f"Here's information on crafting additionals:\n"
+
+                                "Currently Crafting additionals are not possible with players crafting skills.\n\n You can Either get it by farming or from NPC Blacksmiths from safetowns"
+
+                            }
 
                 response_text = crafting_info.get(crafting_response.content.lower(), "Please provide the number from the list to see the crafting info. and Try again type ""hey Elite""")
                 await message.channel.send(response_text)
