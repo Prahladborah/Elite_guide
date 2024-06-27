@@ -297,10 +297,10 @@ async def on_message(message):
                             except asyncio.TimeoutError:
                                 await message.channel.send("You took too long to choose a refinement category.")
             else:
-            await message.channel.send("Invalid choice. Please choose a valid option from 1 to 2.")
+                await message.channel.send("Invalid choice. Please choose a valid option from 1 to 2.")
 
-    except asyncio.TimeoutError:
-        await message.channel.send("You took too long to respond.")
-finally:
-pass
+        except asyncio.TimeoutError:
+            await message.channel.send("You took too long to respond.")
+
+
 bot.run(TOKEN)                        
