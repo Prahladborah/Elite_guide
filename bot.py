@@ -95,8 +95,8 @@ async def on_message(message):
         )
         embed.add_field(name='1. Builds', value='Learn about different builds.')
         embed.add_field(name='2. Blacksmithing', value='Information on weapon forging, armor crafting, etc.')
-        embed.add_field(name='3. Synthesis', value='Material and synthesis, enchantments.')
-        embed.add_field(name='4. Equipment', value='Information on various types of equipment.')
+        embed.add_field(name='3. Synthesis', value='This section is currently not available...Stay tuned')
+        embed.add_field(name='4. Equipment', value='This section is currently not available...Stay tuned')
 
         help_message = await message.channel.send(embed=embed)
 
@@ -309,12 +309,7 @@ async def on_message(message):
                                     
                             except asyncio.TimeoutError:
                                 await message.channel.send("You took too long to choose a refinement category.")
-            elif response.content.lower() == '3':
-        await message.channel.send("This section is under development! uwu")
-    elif response.content.lower() == '4':
-        await message.channel.send("This section is under development! uwu")
-except asyncio.TimeoutError:
-    await message.channel.send("You took too long to choose a category.")
+           
 
 await bot.process_commands(message)
 
