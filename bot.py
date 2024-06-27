@@ -319,11 +319,8 @@ async def on_message(message):
                 await message.channel.send("This section is under development! uwu")
                 
         except asyncio.TimeoutError:
-            
             await message.channel.send(f"An error occurred: {str(e)}")
-
-await bot.process_commands(message)
-
-            
+        finally:
+            await bot.process_commands(message)
 bot.run(TOKEN)
 
