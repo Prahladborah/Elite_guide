@@ -305,21 +305,22 @@ async def on_message(message):
                                     await message.channel.send("The enhancement section is currently under development. Please check back later.")
                                     
                                 else:
-                                    await message.channel.send("Invalid choice. Please choose a valid option from 1 to 4")
+                                    await message.channel.send("Invalid choice. Please choose a valid option from 1 to 4") 
                                     
-                
-            elif response.content.lower() == '3':
-                await message.channel.send("This section is under development! uwu")
-            elif response.content.lower() == '4':
-                 await message.channel.send("This section is under development! uwu")
-            
-            else:
-                await message.channel.send("Enter the numbers and try again muwhahahahaha... type \"hey elite\" to trigger from beginning")
+                                    
+                                    
+    elif response.content.lower() == '3':
+        await message.channel.send("This section is under development! uwu")
         
-        except asyncio.TimeoutError:
-            await message.channel.send("You took too long to respond. Type \"hey elite\" to trigger from beginning")
-            
-            await bot.process_commands(message)
+    elif response.content.lower() == '4':
+        await message.channel.send("This section is under development! uwu")
+        
+    else:
+        
+        await message.channel.send("Enter the numbers and try again muwhahahahaha... type \"hey elite\" to trigger from beginning")
+        
+    
+await bot.process_commands(message)
                            
 
 bot.run(TOKEN)
