@@ -9,6 +9,13 @@ load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 if TOKEN is None:
     raise ValueError("DISCORD_TOKEN environment variable is not set")
+intents = discord.Intents.default()
+intents.message_content = True
+intents.presences = True
+intents.members = True
+
+bot = commands.Bot(command_prefix='!', intents=intents)
+
 leveling_info = {
     range(1, 34): ("Nisel Mountain: Mountainside", "Shell Mask", "Earth"),
     range(34, 50): ("Ancient Empress Tomb: Area 1", "Bone Dragonewt", "Dark"),
@@ -43,10 +50,6 @@ def get_leveling_info(level):
         if level in level_range:
             return info
     return ("Level out of range", "Please provide a valid level", "N/A")
-intents = discord.Intents.default()
-intents.messages = True
-intents.message_content = True
-bot = commands.Bot(command_prefix='/', intents=intents)
 
 @bot.event
 async def on_ready():
@@ -77,16 +80,6 @@ async def on_message(message):
             await message.channel.send(embed=embed)
         except asyncio.TimeoutError:
             await message.channel.send("You took too long to respond! Please try again.")
-
-    import discord
-from discord.ext import commands
-import asyncio
-
-TOKEN = 'your_token_here'
-
-intents = discord.Intents.default()
-intents.messages = True
-bot = commands.Bot(command_prefix="!", intents=intents)
 
 @bot.event
 async def on_ready():
