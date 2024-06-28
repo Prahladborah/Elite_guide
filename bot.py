@@ -4,57 +4,59 @@ from discord.ext import commands
 from dotenv import load_dotenv
 import asyncio
 
+# Load environment variables from .env file (useful for local development)
 load_dotenv()
 
+# Get the token from environment variables
 TOKEN = os.getenv('DISCORD_TOKEN')
+
+# Check if the token is loaded correctly
 if TOKEN is None:
     raise ValueError("DISCORD_TOKEN environment variable is not set")
-intents = discord.Intents.default()
-intents.message_content = True
-intents.presences = True
-intents.members = True
 
-bot = commands.Bot(command_prefix='!', intents=intents)
-
-@bot.event
-async def on_ready():
-    print(f'Logged in as {bot.user}')
-
-
+# Define leveling information
 leveling_info = {
     range(1, 34): ("Nisel Mountain: Mountainside", "Shell Mask", "Earth"),
     range(34, 50): ("Ancient Empress Tomb: Area 1", "Bone Dragonewt", "Dark"),
     range(50, 60): ("Land Of Chaos: Hidden boss", "Forestia (normal/hard)", "Wind"),
     range(60, 69): ("Land Of Chaos: Hidden boss", "Forestia (Nightmare)", "Wind"),
-    range(70, 80): ("Land Under Cultivation: Hill", "Masked Warrior (Hard)", "Fire"),
-    range(80, 90): ("Land Under Cultivation: Hill", "Masked Warrior (Nightmare)", "Fire"),
-    range(90, 100): ("Gravel Terrace", "Jade Raptor (Nightmare) or Polde Ice Valley: Don-Yeti", "(Jade Wind) and (Don yeti Earth)"),
-    range(100, 110): ("Land Under Cultivation: Hill", "Masked Warrior (Ultimate)", "Fire"),
-    range(110, 117): ("Spring of Rebirth: Top", "Cerberus (Nightmare)", "Water"),
+    range(70, 80): ("Land Under Cultivation: Hill", "Masked Warrior (Hard)", "Earth"),
+    range(80, 90): ("Land Under Cultivation: Hill", "Masked Warrior (Nightmare)", "Earth"),
+    range(90, 100): ("Gravel Terrace", "Jade Raptor (Nightmare) or Polde Ice Valley: Don-Yeti", "Water"),
+    range(100, 110): ("Land Under Cultivation: Hill", "Masked Warrior (Ultimate)", "Earth"),
+    range(110, 117): ("Spring of Rebirth: Top", "Cerberus (Nightmare)", "Fire"),
     range(117, 130): ("Magic Waste Site: Deepest Part", "Scrader (Ultimate)", "Dark"),
-    range(130, 140): ("Spring of Rebirth: Top", "Cerberus (Ultimate)", "water"),
-    range(140, 148): ("Dark Castle: Area 2", "Memecoleous (Ultimate)", "Netural"),
-    range(148, 153): ("Plastida: Deepest Part", "Imitator (Ultimate)", "Fire"),
+    range(130, 140): ("Spring of Rebirth: Top", "Cerberus (Ultimate)", "Fire"),
+    range(140, 148): ("Dark Castle: Area 2", "Memecoleous (Ultimate)", "Dark"),
+    range(148, 153): ("Plastida: Deepest Part", "Imitator (Ultimate)", "Water"),
     range(154, 158): ("Small Demi Machina Factory Core", "Tyrant Machina (Ultimate)", "Neutral"),
     range(158, 164): ("Large Demi Machina Factory: Deepest Part", "Mozto Machina (Ultimate)", "Neutral"),
-    range(164, 175): ("Ultimea Palace: Throne", "Venena Coenubia (Nightmare)", "Fire"),
+    range(164, 175): ("Ultimea Palace: Throne", "Venena Coenubia (Nightmare)", "Dark"),
     range(176, 184): ("Droma Square", "Ultimate Machina (Ultimate)", "Neutral"),
-    range(184, 198): ("Ultimea Palace: Throne", "Venena Coenubia (Ultimate)", "Fire"),
+    range(184, 198): ("Ultimea Palace: Throne", "Venena Coenubia (Ultimate)", "Dark"),
     range(198, 208): ("Dark Dragon Shrine: Near the Top", "Finstern the Dark Dragon (Ultimate)", "Dark"),
-    range(208, 220): ("Labilans Sector: Square", "Kuzto (Ultimate)", "Earth"),
-    range(220, 230): ("Recetacula Sector: Depot Rooftop", "Gravicep (Ultimate)", "Netural"),
+    range(208, 220): ("Labilans Sector: Square", "Kuzto (Ultimate)", "Dark"),
+    range(220, 230): ("Recetacula Sector: Depot Rooftop", "Gravicep (Ultimate)", "Dark"),
     range(230, 245): ("Arche Valley: Depths", "Arachnidemon (Ultimate)", "Dark"),
-    range(245, 260): ("Operation Zone: Cockpit Area", "Trickster Dragon Mimyugon (Nightmare)", "Earth"),
-    range(260, 285): ("Arstida: Depth", "Velum (Ultimate)", "Netural"),
-    range(285, 295): ("Boma Konda: Village Center", "Brass Dragon Reguita", "Netural"),
-    range(295, 300): ("Boss colon", "Are you baka?", "Do mq shoo"),
+    range(245, 260): ("Operation Zone: Cockpit Area", "Trickster Dragon Mimyugon (Nightmare)", "Dark"),
+    range(260, 285): ("No info", "Do main quest", "N/A"),
+    range(285, 295): ("Boss colon", "Boss colon", "N/A"),
+    range(295, 300): ("Boss colon", "Boss colon", "N/A"),
 }
 
+# Helper function to get leveling information
 def get_leveling_info(level):
     for level_range, info in leveling_info.items():
         if level in level_range:
             return info
-    return None
+    return ("Level out of range", "Please provide a valid level", "N/A")
+
+# Define the bot
+intents = discord.Intents.default()
+intents.message_content = True
+intents.presences = True
+intents.members = True
+bot = commands.Bot(command_prefix='/', intents=intents)
 
 @bot.event
 async def on_ready():
