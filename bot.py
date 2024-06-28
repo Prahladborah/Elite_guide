@@ -80,6 +80,8 @@ async def on_message(message):
             await message.channel.send(embed=embed)
         except ValueError:
             await message.channel.send("Please provide a valid level number after the command.")
+
+await bot.process_commands(message)
     
 
 @bot.event
