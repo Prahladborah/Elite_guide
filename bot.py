@@ -11,42 +11,6 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 if TOKEN is None:
     raise ValueError("DISCORD_TOKEN environment variable is not set")
 
-# leveling information
-leveling_info = {
-    range(1, 34): ("Nisel Mountain: Mountainside", "Shell Mask", "Earth"),
-    range(34, 50): ("Ancient Empress Tomb: Area 1", "Bone Dragonewt", "Dark"),
-    range(50, 60): ("Land Of Chaos: Hidden boss", "Forestia (normal/hard)", "Wind"),
-    range(60, 69): ("Land Of Chaos: Hidden boss", "Forestia (Nightmare)", "Wind"),
-    range(70, 80): ("Land Under Cultivation: Hill", "Masked Warrior (Hard)", "Earth"),
-    range(80, 90): ("Land Under Cultivation: Hill", "Masked Warrior (Nightmare)", "Earth"),
-    range(90, 100): ("Gravel Terrace", "Jade Raptor (Nightmare) or Polde Ice Valley: Don-Yeti", "Water"),
-    range(100, 110): ("Land Under Cultivation: Hill", "Masked Warrior (Ultimate)", "Earth"),
-    range(110, 117): ("Spring of Rebirth: Top", "Cerberus (Nightmare)", "Fire"),
-    range(117, 130): ("Magic Waste Site: Deepest Part", "Scrader (Ultimate)", "Dark"),
-    range(130, 140): ("Spring of Rebirth: Top", "Cerberus (Ultimate)", "Fire"),
-    range(140, 148): ("Dark Castle: Area 2", "Memecoleous (Ultimate)", "Dark"),
-    range(148, 153): ("Plastida: Deepest Part", "Imitator (Ultimate)", "Water"),
-    range(154, 158): ("Small Demi Machina Factory Core", "Tyrant Machina (Ultimate)", "Neutral"),
-    range(158, 164): ("Large Demi Machina Factory: Deepest Part", "Mozto Machina (Ultimate)", "Neutral"),
-    range(164, 175): ("Ultimea Palace: Throne", "Venena Coenubia (Nightmare)", "Dark"),
-    range(176, 184): ("Droma Square", "Ultimate Machina (Ultimate)", "Neutral"),
-    range(184, 198): ("Ultimea Palace: Throne", "Venena Coenubia (Ultimate)", "Dark"),
-    range(198, 208): ("Dark Dragon Shrine: Near the Top", "Finstern the Dark Dragon (Ultimate)", "Dark"),
-    range(208, 220): ("Labilans Sector: Square", "Kuzto (Ultimate)", "Dark"),
-    range(220, 230): ("Recetacula Sector: Depot Rooftop", "Gravicep (Ultimate)", "Dark"),
-    range(230, 245): ("Arche Valley: Depths", "Arachnidemon (Ultimate)", "Dark"),
-    range(245, 260): ("Operation Zone: Cockpit Area", "Trickster Dragon Mimyugon (Nightmare)", "Dark"),
-    range(260, 285): ("No info", "Do main quest", "N/A"),
-    range(285, 295): ("Boss colon", "Boss colon", "N/A"),
-    range(295, 300): ("Boss colon", "Boss colon", "N/A"),
-}
-
-# Helper function to get leveling information
-def get_leveling_info(level):
-    for level_range, info in leveling_info.items():
-        if level in level_range:
-            return info
-    return ("Level out of range", "Please provide a valid level", "N/A")
 
 # Define the bot
 intents = discord.Intents.default()
@@ -64,27 +28,6 @@ async def on_message(message):
     if message.author == bot.user:
         return
     
-    if message.content.lower().startswith(("where to level", "where should i level", "/grind")):
-        try:
-            level = int(message.content.split()[-1]) 
-            info = get_leveling_info(level)
-            if info:
-                location, monster, element = info
-                embed = discord.Embed(title=f"Level {level} Leveling Information", color=discord.Color.blue())
-                embed.add_field(name="Location", value=location, inline=True)
-                embed.add_field(name="Monster", value=monster, inline=True)
-                embed.add_field(name="Element", value=element, inline=True)
-            else:
-                embed = discord.Embed(title="Error", description="No leveling information found for this level.", color=discord.Color.red())
-            await message.channel.send(embed=embed)
-        except ValueError:
-            await message.channel.send("Please provide a valid level number after the command.")
-
-@bot.event
-async def on_message(message):
-    if message.author == bot.user:
-        return
-    
     if message.content.lower().startswith(("i need help", "hey elite", "hey guide")):
         embed = discord.Embed(
             title=f'How can I help you, {message.author.name}?',
@@ -95,6 +38,7 @@ async def on_message(message):
         embed.add_field(name='2. Blacksmithing', value='Information on weapon forging, armor crafting, etc.')
         embed.add_field(name='3. Synthesis', value='Material and synthesis, enchantments.')
         embed.add_field(name='4. Equipment', value='Information on various types of equipment.')
+        embed.add_field(name='5. Leveling', value='Information on leveling spots.')
 
         help_message = await message.channel.send(embed=embed)
 
