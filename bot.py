@@ -36,9 +36,9 @@ async def on_message(message):
         )
         embed.add_field(name='1. Builds', value='Learn about different builds.', inline=False)
         embed.add_field(name='2. Blacksmithing', value='Information on weapon forging, armor crafting, etc.', inline=False)
-        embed.add_field(name='3. Synthesis', value='Material and synthesis, enchantments.', inline=False)
-        embed.add_field(name='4. Equipment', value='Information on various types of equipment.', inline=False)
-        embed.add_field(name='5. Leveling', value='Information on leveling spots.', inline=False)
+        embed.add_field(name='3. Synthesis', value='This section is under development, stay tuned', inline=False)
+        embed.add_field(name='4. Equipment', value='This section is under development, stay tuned', inline=False)
+        embed.add_field(name='5. Leveling', value='This section is under development, stay tuned', inline=False)
 
         help_message = await message.channel.send(embed=embed)
 
