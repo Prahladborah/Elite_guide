@@ -56,20 +56,31 @@ def get_leveling_info(level):
             return info
     return None
 
-@bot.command(name='where_to_level')
-@bot.command(name='i_need_levelling_info')
-@bot.command(name='/grind')
-async def leveling_info_command(ctx, level: int):
-    info = get_leveling_info(level)
-    if info:
-        location, monster, element = info
-        embed = discord.Embed(title=f"Level {level} Leveling Information", color=discord.Color.blue())
-        embed.add_field(name="Location", value=location, inline=False)
-        embed.add_field(name="Monster", value=monster, inline=False)
-        embed.add_field(name="Element", value=element, inline=False)
-    else:
-        embed = discord.Embed(title="Error", description="No leveling information found for this level.", color=discord.Color.red())
-    await ctx.send(embed=embed)
+@bot.event
+async def on_ready():
+    print(f'Logged in as {bot.user}')
+
+@bot.event
+async def on_message(message):
+    if message.author == bot.user:
+        return
+    
+    if message.content.lower().startswith(("where to level", "where should i level", "/grind")):
+        try:
+            level = int(message.content.split()[-1]) 
+            info = get_leveling_info(level)
+            if info:
+                location, monster, element = info
+                embed = discord.Embed(title=f"Level {level} Leveling Information", color=discord.Color.blue())
+                embed.add_field(name="Location", value=location, inline=True)
+                embed.add_field(name="Monster", value=monster, inline=True)
+                embed.add_field(name="Element", value=element, inline=True)
+            else:
+                embed = discord.Embed(title="Error", description="No leveling information found for this level.", color=discord.Color.red())
+            await message.channel.send(embed=embed)
+        except ValueError:
+            await message.channel.send("Please provide a valid level number after the command.")
+    
 
 @bot.event
 async def on_message(message):
@@ -272,4 +283,5 @@ async def handle_refine(message, check):
     except asyncio.TimeoutError:
         await message.channel.send("You took too long to choose a refinement category.")
 
+    await bot.process_commands(message)
 bot.run(TOKEN)
