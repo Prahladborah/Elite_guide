@@ -16,6 +16,11 @@ intents.members = True
 
 bot = commands.Bot(command_prefix='!', intents=intents)
 
+@bot.event
+async def on_ready():
+    print(f'Logged in as {bot.user}')
+
+
 leveling_info = {
     range(1, 34): ("Nisel Mountain: Mountainside", "Shell Mask", "Earth"),
     range(34, 50): ("Ancient Empress Tomb: Area 1", "Bone Dragonewt", "Dark"),
@@ -51,16 +56,13 @@ def get_leveling_info(level):
             return info
     return ("Level out of range", "Please provide a valid level", "N/A")
 
-@bot.event
-async def on_ready():
-    print(f'Logged in as {bot.user}')
 
 @bot.event
 async def on_message(message):
     if message.author == bot.user:
         return
 
-    if message.content.lower().startswith("where should i level") or message.content.lower().startswith("where to level"):
+    if message.content.lower().startswith(("/grind", "where to level", "where should i level",)):
         await message.channel.send("Please provide your current level:")
 
         def check(msg):
@@ -81,9 +83,6 @@ async def on_message(message):
         except asyncio.TimeoutError:
             await message.channel.send("You took too long to respond! Please try again.")
 
-@bot.event
-async def on_ready():
-    print(f'Logged in as {bot.user}')
 
 @bot.event
 async def on_message(message):
