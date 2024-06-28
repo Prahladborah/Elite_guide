@@ -4,17 +4,14 @@ from discord.ext import commands
 from dotenv import load_dotenv
 import asyncio
 
-# Load environment variables from .env file (useful for local development)
 load_dotenv()
 
-# Get the token from environment variables
 TOKEN = os.getenv('DISCORD_TOKEN')
 
-# Check if the token is loaded correctly
 if TOKEN is None:
     raise ValueError("DISCORD_TOKEN environment variable is not set")
 
-# Define leveling information
+# leveling information
 leveling_info = {
     range(1, 34): ("Nisel Mountain: Mountainside", "Shell Mask", "Earth"),
     range(34, 50): ("Ancient Empress Tomb: Area 1", "Bone Dragonewt", "Dark"),
@@ -53,10 +50,10 @@ def get_leveling_info(level):
 
 # Define the bot
 intents = discord.Intents.default()
+intents.messages = True
 intents.message_content = True
-intents.presences = True
-intents.members = True
 bot = commands.Bot(command_prefix='/', intents=intents)
+
 
 @bot.event
 async def on_ready():
