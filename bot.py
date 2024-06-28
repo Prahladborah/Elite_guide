@@ -58,7 +58,7 @@ def get_leveling_info(level):
 
 @bot.command(name='where_to_level')
 @bot.command(name='i_need_levelling_info')
-@bot.command(name='grind')
+@bot.command(name='/grind')
 async def leveling_info_command(ctx, level: int):
     info = get_leveling_info(level)
     if info:
