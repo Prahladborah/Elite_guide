@@ -54,35 +54,22 @@ def get_leveling_info(level):
     for level_range, info in leveling_info.items():
         if level in level_range:
             return info
-    return ("Level out of range", "Please provide a valid level", "N/A")
+    return None
 
-
-@bot.event
-async def on_message(message):
-    if message.author == bot.user:
-        return
-
-    if message.content.lower().startswith(("/grind", "where to level", "where should i level",)):
-        await message.channel.send("Please provide your current level:")
-
-        def check(msg):
-            return msg.author == message.author and msg.channel == message.channel and msg.content.isdigit()
-
-        try:
-            msg = await bot.wait_for('message', check=check, timeout=30)
-            level = int(msg.content)
-            place, monster, element = get_leveling_info(level)
-
-            embed = discord.Embed(title=f"Grinding Info for Level {level}", color=discord.Color.blue())
-            embed.add_field(name="Level", value=f"{level}", inline=True)
-            embed.add_field(name="Place", value=f"{place}", inline=True)
-            embed.add_field(name="Monster", value=f"{monster}", inline=True)
-            embed.add_field(name="Element", value=f"{element}", inline=True)
-
-            await message.channel.send(embed=embed)
-        except asyncio.TimeoutError:
-            await message.channel.send("You took too long to respond! Please try again.")
-
+@bot.command(name='where_to_level')
+@bot.command(name='i_need_levelling_info')
+@bot.command(name='grind')
+async def leveling_info_command(ctx, level: int):
+    info = get_leveling_info(level)
+    if info:
+        location, monster, element = info
+        embed = discord.Embed(title=f"Level {level} Leveling Information", color=discord.Color.blue())
+        embed.add_field(name="Location", value=location, inline=False)
+        embed.add_field(name="Monster", value=monster, inline=False)
+        embed.add_field(name="Element", value=element, inline=False)
+    else:
+        embed = discord.Embed(title="Error", description="No leveling information found for this level.", color=discord.Color.red())
+    await ctx.send(embed=embed)
 
 @bot.event
 async def on_message(message):
@@ -123,17 +110,18 @@ async def handle_builds(message, check):
         description='Choose a build category:(type build number from the list only)',
         color=discord.Color.green()
     )
-    build_embed.add_field(name='1. 0HS Tank', value='Information on 0HS Tank build.')
-    build_embed.add_field(name='2. 0HS DPS', value='Information on 0HS DPS build.')
-    build_embed.add_field(name='3. 2HS', value='Information on 2HS build.')
-    build_embed.add_field(name='4. Bow', value='Information on Bow build.')
-    build_embed.add_field(name='5. BWG', value='Information on BWG build.')
-    build_embed.add_field(name='6. KTN', value='Information on KTN build.')
-    build_embed.add_field(name='7. HB', value='Information on HB build.')
-    build_embed.add_field(name='8. KNX Tank', value='Information on KNX Tank build.')
-    build_embed.add_field(name='9. KNX DPS', value='Information on KNX DPS build.')
-    build_embed.add_field(name='10. Barehand', value='Information on Barehand build.')
-    build_embed.add_field(name='11. Support', value='Information on Support build.')
+    build_embed.add_field(name='1. 0HS Tank', value='Information on 0HS Tank build.', inline=True)
+    build_embed.add_field(name='2. 0HS DPS', value='Information on 0HS DPS build.', inline=True)
+    build_embed.add_field(name='3. 2HS', value='Information on 2HS build.', inline=True)
+    build_embed.add_field(name='4. Bow', value='Information on Bow build.', inline=True)
+    build_embed.add_field(name='5. BWG', value='Information on BWG build.', inline=True)
+    build_embed.add_field(name='6. KTN', value='Information on KTN build.', inline=True)
+    build_embed.add_field(name='7. HB', value='Information on HB build.', inline=True)
+    build_embed.add_field(name='8. KNX Tank', value='Information on KNX Tank build.', inline=True)
+    build_embed.add_field(name='9. KNX DPS', value='Information on KNX DPS build.', inline=True)
+    build_embed.add_field(name='10. Barehand', value='Information on Barehand build.', inline=True)
+    build_embed.add_field(name='11. Support', value='Information on Support build.', inline=True)
+
     await message.channel.send(embed=build_embed)
 
     try:
@@ -164,10 +152,10 @@ async def handle_blacksmithing(message, check):
         description='Choose a blacksmithing category:',
         color=discord.Color.orange()
     )
-    blacksmith_embed.add_field(name='1. Crafting', value='Crafting in the game involves creating weapons from materials. Player-crafted equipment emphasizes ATK, stability, and DEF stats. Rather than predefined stats, items feature potential points that can be converted into statistics (refer to section C). To engage in crafting, players require the \'Create Equipment\' EX Skill, which unlocks the crafting menu. Advancing this skill enhances crafting success rates. Notably, skills such as \'Careful Creation\' and \'Expert\'s Creation,\' when maxed at level 10, increase an item\'s potential by 10% (rounded down).')
-    blacksmith_embed.add_field(name='2. Refine', value='Refining in the game strengthens weapons or armor. Each +N refine for weapons increases damage by N^2% and adds +N bonus attack. For armor, additional gear, and shields, each refine reduces damage taken by 1%. For example, refining a weapon with 100 base attack to +6 results in +(6^2% × 100) and +6 bonus attack, totaling 142 attack power.')
-    blacksmith_embed.add_field(name='3. Statting', value='Statting in the game converts potential points into stat points for player-crafted equipment, with up to 8 customizable stat slots and limits based on character level, total Customization skill levels, and stat caps.')
-    blacksmith_embed.add_field(name='4. Enhancement', value='Information on enhancements')
+    blacksmith_embed.add_field(name='1. Crafting', value='Crafting in the game involves creating weapons from materials. Player-crafted equipment emphasizes ATK, stability, and DEF stats. Rather than predefined stats, items feature potential points that can be converted into statistics (refer to section C). To engage in crafting, players require the \'Create Equipment\' EX Skill, which unlocks the crafting menu. Advancing this skill enhances crafting success rates. Notably, skills such as \'Careful Creation\' and \'Expert\'s Creation,\' when maxed at level 10, increase an item\'s potential by 10% (rounded down).', inline=True)
+    blacksmith_embed.add_field(name='2. Refine', value='Refining in the game strengthens weapons or armor. Each +N refine for weapons increases damage by N^2% and adds +N bonus attack. For armor, additional gear, and shields, each refine reduces damage taken by 1%. For example, refining a weapon with 100 base attack to +6 results in +(6^2% × 100) and +6 bonus attack, totaling 142 attack power.', inline=True)
+    blacksmith_embed.add_field(name='3. Statting', value='Statting in the game converts potential points into stat points for player-crafted equipment, with up to 8 customizable stat slots and limits based on character level, total Customization skill levels, and stat caps.', inline=True)
+    blacksmith_embed.add_field(name='4. Enhancement', value='Information on enhancements', inline=True)
     await message.channel.send(embed=blacksmith_embed)
 
     try:
@@ -192,16 +180,16 @@ async def handle_crafting(message, check):
         description='Choose a crafting category:',
         color=discord.Color.blue()
     )
-    crafting_embed.add_field(name='1. One-Handed Swords (ohs)', value='Information on crafting one-handed swords')
-    crafting_embed.add_field(name='2. Two-Handed Swords (2hs)', value='Information on crafting two-handed swords')
-    crafting_embed.add_field(name='3. Halberds', value='Information on crafting halberds')
-    crafting_embed.add_field(name='4. Katanas', value='Information on crafting katanas')
-    crafting_embed.add_field(name='5. Staffs', value='Information on crafting staffs')
-    crafting_embed.add_field(name='6. Magic Devices', value='Information on crafting magic devices')
-    crafting_embed.add_field(name='7. Bows', value='Information on crafting bows')
-    crafting_embed.add_field(name='8. Bow Guns', value='Information on crafting bow guns')
-    crafting_embed.add_field(name='9. Armors', value='Information on crafting armors')
-    crafting_embed.add_field(name='10. Additionals', value='Information on crafting additionals')
+    crafting_embed.add_field(name='1. One-Handed Swords (ohs)', value='Information on crafting one-handed swords', inline=True)
+    crafting_embed.add_field(name='2. Two-Handed Swords (2hs)', value='Information on crafting two-handed swords', inline=True)
+    crafting_embed.add_field(name='3. Halberds', value='Information on crafting halberds', inline=True)
+    crafting_embed.add_field(name='4. Katanas', value='Information on crafting katanas', inline=True)
+    crafting_embed.add_field(name='5. Staffs', value='Information on crafting staffs', inline=True)
+    crafting_embed.add_field(name='6. Magic Devices', value='Information on crafting magic devices', inline=True)
+    crafting_embed.add_field(name='7. Bows', value='Information on crafting bows', inline=True)
+    crafting_embed.add_field(name='8. Bow Guns', value='Information on crafting bow guns', inline=True)
+    crafting_embed.add_field(name='9. Armors', value='Information on crafting armors', inline=True)
+    crafting_embed.add_field(name='10. Additionals', value='Information on crafting additionals', inline=True)
 
     await message.channel.send(embed=crafting_embed)
 
