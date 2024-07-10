@@ -262,6 +262,7 @@ Code: 7057777 LVL 6
         color=discord.Color.orange()
     )
         await message.channel.send(embed=embed)
+
     elif message.content.lower().startswith(("dte earth food buff", "dte earth buff")):
     embed = discord.Embed(
         title='DTE Earth Food Buff Codes',
@@ -272,8 +273,9 @@ Code: 7057777 LVL 6
         ''',
         color=discord.Color.dark_green()
     )
-       await message.channel.send(embed=embed)
-   elif message.content.lower().startswith(("dte water food buff", "dte water buff")):
+        await message.channel.send(embed=embed)
+
+    elif message.content.lower().startswith(("dte water food buff", "dte water buff")):
     embed = discord.Embed(
         title='DTE Water Food Buff Codes',
         description='''
@@ -283,8 +285,9 @@ Code: 7057777 LVL 6
         ''',
         color=discord.Color.blue()
     )
-       await message.channel.send(embed=embed)
-   elif message.content.lower().startswith(("dte wind food buff", "dte wind buff")):
+        await message.channel.send(embed=embed
+                                  
+    elif message.content.lower().startswith(("dte wind food buff", "dte wind buff")):
     embed = discord.Embed(
         title='DTE Wind Food Buff Codes',
         description='''
@@ -295,8 +298,9 @@ Code: 7057777 LVL 6
         ''',
         color=discord.Color.teal()
     )
-       await message.channel.send(embed=embed)
-   elif message.content.lower().startswith(("dte dark food buff", "dte dark buff")):
+        await message.channel.send(embed=embed)
+
+    elif message.content.lower().startswith(("dte dark food buff", "dte dark buff")):
     embed = discord.Embed(
         title='DTE Dark Food Buff Codes',
         description='''
@@ -306,9 +310,9 @@ Code: 7057777 LVL 6
         ''',
         color=discord.Color.purple()
     )
-       await message.channel.send(embed=embed)
+        await message.channel.send(embed=embed)
 
-   elif message.content.lower().startswith(("dte light food buff", "dte light buff")):
+    elif message.content.lower().startswith(("dte light food buff", "dte light buff")):
     embed = discord.Embed(
         title='DTE Light Food Buff Codes',
         description='''
@@ -318,8 +322,9 @@ Code: 7057777 LVL 6
         ''',
         color=discord.Color.lighter_grey()
     )
-       await message.channel.send(embed=embed)
-   elif message.content.lower().startswith(("dte neutral food buff", "dte neutral buff")):
+        await message.channel.send(embed=embed)
+
+    elif message.content.lower().startswith(("dte neutral food buff", "dte neutral buff")):
     embed = discord.Embed(
         title='DTE Neutral Food Buff Codes',
         description='''
@@ -328,7 +333,7 @@ Code: 7057777 LVL 6
         ''',
         color=discord.Color.blurple()
     )
-       await message.channel.send(embed=embed)
+        await message.channel.send(embed=embed)
  
 
 
