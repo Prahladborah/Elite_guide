@@ -60,10 +60,29 @@ async def on_message(message):
     elif message.content.lower().startswith(("hp food buff", "hp buff")):
         embed = discord.Embed(
             title='HP Buff House Addresses',
-            description='1. House Address: 1010455 LVL 10 (Fridge)\n 2. House Address: 3191130 LVL 10 (Fridge)\n 3. House Address: 1011945 LVL 10 (Fridge)\n 4. House Address: 3092003 LVL 10 (Fridge)',
+            description='1. House Address: 1010455 LVL 10 (Fridge)\n2. House Address: 3191130 LVL 10 (Fridge)\n3. House Address: 1011945 LVL 10 (Fridge)\n4. House Address: 3092003 LVL 10 (Fridge)\n5. House Address: 1234567 LVL 10 (Fridge)\n6. House Address: 1010032 LVL 10 (Stove)\n7. House Address: 3030324 LVL 9 (Fridge)\n8. House Address: 5030666 LVL 9 (Fridge)',
             color=discord.Color.green()
         )
         await message.channel.send(embed=embed)
+    
+    elif message.content.lower().startswith(("mp food buff", "mp buff")):
+        embed = discord.Embed(
+            title='MP Buff House Addresses',
+            description='1. House Address: 1010013 LVL 10 (Fridge)\n2. House Address: 3017676 LVL 10 (Fridge)\n3. House Address: 1010216 LVL 10 (Fridge)\n4. House Address: 1011212 LVL 10 (Fridge)\n5. House Address: 1032222 LVL 9 (Stove)\n6. House Address: 3210666 LVL 9 (Stove)\n7. House Address: 4046666 LVL 9 (Fridge)\n8. House Address: 4011793 LVL 10 (Fridge)',
+            color=discord.Color.blue()
+        )
+        await message.channel.send(embed=embed)
+
+    elif message.content.lower().startswith(("ampr food buff", "ampr buff")):
+        embed = discord.Embed(
+            title='Attack MP Recovery Buff House Addresses',
+            description='1. House Address: 1010455 LVL 10 (Fridge)\n2. House Address: 3191130 LVL 10 (Fridge)\n3. House Address: 1011945 LVL 10 (Fridge)\n4. House Address: 3092003 LVL 10 (Fridge)\n5. House Address: 1234567 LVL 10 (Fridge)\n6. House Address: 1010032 LVL 10 (Stove)\n7. House Address: 3030324 LVL 9 (Fridge)\n8. House Address: 5030666 LVL 9 (Fridge)',
+            color=discord.Color.green()
+        )
+        await message.channel.send(embed=embed)
+
+
+
         
 
 async def handle_builds(message, check):
