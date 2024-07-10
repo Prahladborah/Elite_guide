@@ -77,36 +77,263 @@ async def on_message(message):
         embed = discord.Embed(
             title='Attack MP Recovery Buff House Addresses',
             description='1. 秋湫萩: 1010092 LVL 10\n2. ///KEN///: 3201003 LVL 10\n3. 、蒼炎の焰、: 1010006 LVL 10\n4. 颯: 2110000 LVL 10\n5. LUMiNA: 5252525 LVL 10\n6. Levy: 1010050 LVL 10\n7. O kara: 1011010 LVL 10\n8.Fuzuki: 3063101 LVL 10',
-            color=discord.Color.green()
+            color=discord.Color.greyple()
         )
         await message.channel.send(embed=embed)
-    elif message.content.lower().startswith(("critical rate food buff", "critical rate buff")):
+    elif message.content.lower().startswith(("critical rate buff", "crt buff", "crit buff")):
         embed = discord.Embed(
             title='Critical Rate Food Buff Codes',
             description='''
-1. Code: 1010092 LVL 10
-2. Code: 3201003 LVL 10
-3. Code: 1010006 LVL 10
-4. Code: 4040404 LVL 10
-5. Code: 1011902 LVL 10
-6. Code: 1010017 LVL 10
-7. Code: 5240001 LVL 10
-8. Code: 3062728 LVL 10
-9. Code: 1011010 LVL 10
-10. Code: 3063101 LVL 10
-11. Code: 1011010 LVL 10
-12. Code: 1010050 LVL 10
-13. Code: 5252525 LVL 10
-14. Code: 2110000 LVL 10
+Code: 1010092 LVL 10
+Code: 3201003 LVL 10
+Code: 1010006 LVL 10
+Code: 4040404 LVL 10
+Code: 1011902 LVL 10
+Code: 1010017 LVL 10
+Code: 5240001 LVL 10
+Code: 3062728 LVL 10
+Code: 1011010 LVL 10
+Code: 3063101 LVL 10
+Code: 1011010 LVL 10
+Code: 1010050 LVL 10
+Code: 5252525 LVL 10
+Code: 2110000 LVL 10
+        ''',
+            color=discord.Color.gold()
+        )
+        await message.channel.send(embed=embed)
+    elif message.content.lower().startswith(("weapon atk food buff", "weapon atk buff","weapon buff")):
+        embed = discord.Embed(
+            title='WEAPON ATK Food Buff Codes',
+            description='''
+Code: 1010029 LVL 10
+Code: 1010099 LVL 10
+Code: 6010024 LVL 10
+Code: 1011126 LVL 10
+Code: 3070028 LVL 9
+        ''',
+            color=discord.Color.red()
+        )
+        await message.channel.send(embed=embed)
+    elif message.content.lower().startswith(("str food buff", "str buff")):
+        embed = discord.Embed(
+            title='STR Food Buff Codes',
+            description='''
+Code: 4016699 LVL 10
+Code: 7070777 LVL 10
+Code: 6240980 LVL 9
+Address: Elscaro-A-1 LVL 9
+        ''',
+            color=discord.Color.lighter_grey()
+        )
+        await message.channel.send(embed=embed)
+    elif message.content.lower().startswith(("dex food buff", "dex buff")):
+        embed = discord.Embed(
+            title='DEX Food Buff Codes',
+            description='''
+Code: 1010058 LVL 10
+Code: 6140110 LVL 9
+Code: 1234567 LVL 9
+Code: 4204200 LVL 8
+Code: 1050051 LVL 8
+Code: 3011143 LVL 8
+        ''',
+            color=discord.Color.dark_grey()
+        )
+        await message.channel.send(embed=embed)
+    elif message.content.lower().startswith(("int food buff", "int buff")):
+        embed = discord.Embed(
+            title='INT Food Buff Codes',
+            description='''
+Code: 6010701 LVL 10
+Address: Elscaro-z-1234 LVL 8
         ''',
             color=discord.Color.green()
         )
         await message.channel.send(embed=embed)
+    elif message.content.lower().startswith(("agi food buff", "agi buff")):
+        embed = discord.Embed(
+            title='AGI Food Buff Codes',
+            description='''
+Code: 7162029 LVL 10
+Code: 4010228 LVL 8
+Code: 1010050 LVL 8
+        ''',
+            color=discord.Color.green()
+        )
+        await message.channel.send(embed=embed)
+    elif message.content.lower().startswith(("vit food buff", "vit buff")):
+        embed = discord.Embed(
+            title='VIT Food Buff Codes',
+            description='''
+Code: 1012144 LVL 8
+Code: 1010000 LVL 8
+        ''',
+            color=discord.Color.green()
+        )
+        await message.channel.send(embed=embed)
+    elif message.content.lower().startswith(("accuracy", "accuracy buff","hit buff")):
+        embed = discord.Embed(
+            title='Accuracy Food Buff Codes',
+            description='''
+Code: 1010013 LVL 9
+        ''',
+            color=discord.Color.green()
+        )
+        await message.channel.send(embed=embed)
+    elif message.content.lower().startswith(("magic resist", "magical resist","magical resistance")):
+        embed = discord.Embed(
+            title='Magical Resist Food Buff Codes',
+            description='''
+Code: 1010004 LVL 10
+Code: 4080087 LVL 9
+Code: 7222227 LVL 9
+Address: Sofya - Ward A- 69
+        ''',
+            color=discord.Color.green()
+        )
+        await message.channel.send(embed=embed)
+    elif message.content.lower().startswith(("phy resist", "physical resist","physical resistance")):
+        embed = discord.Embed(
+            title='Physical Resist Food Buff Codes',
+            description='''
+Code: 1020001 LVL 10
+Code: 6010701 LVL 9
+Code: 1100000 LVL 9
+        ''',
+            color=discord.Color.green()
+        )
+        await message.channel.send(embed=embed)
+    elif message.content.lower().startswith(("FRACTIONAL BARRIER", "fractional barrier","fract barrier","fract resist")):
+        embed = discord.Embed(
+            title='FRACTIONAL BARRIER Food Buff Codes',
+            description='''
+Code: 1012222 LVL 10
+Code: 2202202 LVL 9
+        ''',
+            color=discord.Color.green()
+        )
+        await message.channel.send(embed=embed)
+    elif message.content.lower().startswith(("Aggro+", "+aggro","+aggro buff","aggro+ buff")):
+        embed = discord.Embed(
+            title='AGGRO + Food Buff Codes',
+            description='''
+Code: 6260113 LVL 10
+Code: 3158668 LVL 10
+Code: 1013000 LVL 9
+Code: 1010207 LVL 9
+Code: 7171717 LVL 9
+        ''',
+            color=discord.Color.green()
+        )
+        await message.channel.send(embed=embed)
+    elif message.content.lower().startswith(("Aggro-", "-aggro","-aggro buff","aggro- buff")):
+        embed = discord.Embed(
+            title='AGGRO - Food Buff Codes',
+            description='''
+Code: 1010038 LVL 10
+Code: 1011174 LVL 10
+Address: Sofya-A-2 LVL 10
+Code: 3061206 LVL 8
+Code: 2110000 LVL 8
+        ''',
+            color=discord.Color.green()
+        )
+         await message.channel.send(embed=embed)
+    elif message.content.lower().startswith(("drop buff", "Droprate buff","luck buff","ice cream buff")):
+        embed = discord.Embed(
+            title='Feel free to take this potato buff if you are a potato',
+            description='''
+Code: 4196969 LVL 6
+Code: 7057777 LVL 6
+        ''',
+            color=discord.Color.green()
+        )
+        await message.channel.send(embed=embed)
+         
+    elif message.content.lower().startswith(("dte fire food buff", "dte fire buff")):
+    embed = discord.Embed(
+        title='DTE Fire Food Buff Codes',
+        description='''
+1. Code: 3210106 LVL 9
+2. Code: 1010799 LVL 7
+3. Code: 1012610 LVL 5
+        ''',
+        color=discord.Color.orange()
+    )
+        await message.channel.send(embed=embed)
+    elif message.content.lower().startswith(("dte earth food buff", "dte earth buff")):
+    embed = discord.Embed(
+        title='DTE Earth Food Buff Codes',
+        description='''
+1. Code: 3210103 LVL 9
+2. Code: 2022222 LVL 8
+3. Code: 1016646 LVL 7
+        ''',
+        color=discord.Color.dark_green()
+    )
+        await message.channel.send(embed=embed)
+   elif message.content.lower().startswith(("dte water food buff", "dte water buff")):
+    embed = discord.Embed(
+        title='DTE Water Food Buff Codes',
+        description='''
+1. Code: 3210100 LVL 9
+2. Code: 3062111 LVL 8
+3. Code: 1110111 LVL 8
+        ''',
+        color=discord.Color.blue()
+    )
+       await message.channel.send(embed=embed)
+   elif message.content.lower().startswith(("dte wind food buff", "dte wind buff")):
+    embed = discord.Embed(
+        title='DTE Wind Food Buff Codes',
+        description='''
+1. Code: 3210101 LVL 9
+2. Code: 3062111 LVL 8
+3. Code: 1010055 LVL 7
+4. Code: 4099876 LVL 7
+        ''',
+        color=discord.Color.teal()
+    )
+       await message.channel.send(embed=embed)
+   elif message.content.lower().startswith(("dte dark food buff", "dte dark buff")):
+    embed = discord.Embed(
+        title='DTE Dark Food Buff Codes',
+        description='''
+1. Code: 3210104 LVL 9
+2. Code: 5010092 LVL 9
+3. Code: 6010003 LVL 8
+        ''',
+        color=discord.Color.purple()
+    )
+       await message.channel.send(embed=embed)
+
+   elif message.content.lower().startswith(("dte light food buff", "dte light buff")):
+    embed = discord.Embed(
+        title='DTE Light Food Buff Codes',
+        description='''
+1. Code: 3210105 LVL 9
+2. Code: 1020345 LVL 9
+3. Code: 4046666 LVL 8
+        ''',
+        color=discord.Color.lighter_grey()
+    )
+       await message.channel.send(embed=embed)
+   elif message.content.lower().startswith(("dte neutral food buff", "dte neutral buff")):
+    embed = discord.Embed(
+        title='DTE Neutral Food Buff Codes',
+        description='''
+1. Code: 3210102 LVL 9
+2. Code: 1019696 LVL 6
+        ''',
+        color=discord.Color.blurple()
+    )
+       await message.channel.send(embed=embed)
+ 
 
 
-
-
-          
+    
+         
 
 async def handle_builds(message, check):
     build_embed = discord.Embed(
