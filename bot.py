@@ -252,13 +252,23 @@ Code: 7057777 LVL 6
         await message.channel.send(embed=embed)
          
     elif message.content.lower().startswith(("dte fire food buff", "dte fire buff")):
+        embed = discord.Embed(
+            title='DTE Fire Food Buff Codes',
+            description='''
+1. Code: 3210106 LVL 9
+2. Code: 1010799 LVL 7
+            ''',
+            color=discord.Color.green()
+        )
+        await message.channel.send(embed=embed)
     embed = discord.Embed(
         title='DTE Fire Food Buff Codes',
         description='''
 1. Code: 3210106 LVL 9
 2. Code: 1010799 LVL 7
-        ''',  # Properly closing the multiline string
-        color=discord.Color.green()  # Assuming you want to set a color
+3. Code: 1012610 LVL 5
+        ''',
+        color=discord.Color.orange()
     )
         await message.channel.send(embed=embed)
 
@@ -284,7 +294,7 @@ Code: 7057777 LVL 6
         ''',
         color=discord.Color.blue()
     )
-        await message.channel.send(embed=embed
+        await message.channel.send(embed=embed)
                                   
     elif message.content.lower().startswith(("dte wind food buff", "dte wind buff")):
     embed = discord.Embed(
