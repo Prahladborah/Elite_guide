@@ -261,21 +261,12 @@ Code: 7057777 LVL 6
             color=discord.Color.green()
         )
         await message.channel.send(embed=embed)
-    embed = discord.Embed(
-        title='DTE Fire Food Buff Codes',
-        description='''
-1. Code: 3210106 LVL 9
-2. Code: 1010799 LVL 7
-3. Code: 1012610 LVL 5
-        ''',
-        color=discord.Color.orange()
-    )
-        await message.channel.send(embed=embed)
+    
 
     elif message.content.lower().startswith(("dte earth food buff", "dte earth buff")):
-    embed = discord.Embed(
-        title='DTE Earth Food Buff Codes',
-        description='''
+        embed = discord.Embed(
+            title='DTE Earth Food Buff Codes',
+            description='''
 1. Code: 3210103 LVL 9
 2. Code: 2022222 LVL 8
 3. Code: 1016646 LVL 7
@@ -285,9 +276,9 @@ Code: 7057777 LVL 6
         await message.channel.send(embed=embed)
 
     elif message.content.lower().startswith(("dte water food buff", "dte water buff")):
-    embed = discord.Embed(
-        title='DTE Water Food Buff Codes',
-        description='''
+        embed = discord.Embed(
+            title='DTE Water Food Buff Codes',
+            description='''
 1. Code: 3210100 LVL 9
 2. Code: 3062111 LVL 8
 3. Code: 1110111 LVL 8
@@ -297,9 +288,9 @@ Code: 7057777 LVL 6
         await message.channel.send(embed=embed)
                                   
     elif message.content.lower().startswith(("dte wind food buff", "dte wind buff")):
-    embed = discord.Embed(
-        title='DTE Wind Food Buff Codes',
-        description='''
+        embed = discord.Embed(
+            title='DTE Wind Food Buff Codes',
+            description='''
 1. Code: 3210101 LVL 9
 2. Code: 3062111 LVL 8
 3. Code: 1010055 LVL 7
@@ -310,9 +301,9 @@ Code: 7057777 LVL 6
         await message.channel.send(embed=embed)
 
     elif message.content.lower().startswith(("dte dark food buff", "dte dark buff")):
-    embed = discord.Embed(
-        title='DTE Dark Food Buff Codes',
-        description='''
+        embed = discord.Embed(
+            title='DTE Dark Food Buff Codes',
+            description='''
 1. Code: 3210104 LVL 9
 2. Code: 5010092 LVL 9
 3. Code: 6010003 LVL 8
@@ -322,9 +313,9 @@ Code: 7057777 LVL 6
         await message.channel.send(embed=embed)
 
     elif message.content.lower().startswith(("dte light food buff", "dte light buff")):
-    embed = discord.Embed(
-        title='DTE Light Food Buff Codes',
-        description='''
+        embed = discord.Embed(
+            title='DTE Light Food Buff Codes',
+            description='''
 1. Code: 3210105 LVL 9
 2. Code: 1020345 LVL 9
 3. Code: 4046666 LVL 8
@@ -334,9 +325,9 @@ Code: 7057777 LVL 6
         await message.channel.send(embed=embed)
 
     elif message.content.lower().startswith(("dte neutral food buff", "dte neutral buff")):
-    embed = discord.Embed(
-        title='DTE Neutral Food Buff Codes',
-        description='''
+        embed = discord.Embed(
+            title='DTE Neutral Food Buff Codes',
+            description='''
 1. Code: 3210102 LVL 9
 2. Code: 1019696 LVL 6
         ''',
