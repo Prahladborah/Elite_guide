@@ -257,9 +257,8 @@ Code: 7057777 LVL 6
         description='''
 1. Code: 3210106 LVL 9
 2. Code: 1010799 LVL 7
-3. Code: 1012610 LVL 5
-        ''',
-        color=discord.Color.orange()
+        ''',  # Properly closing the multiline string
+        color=discord.Color.green()  # Assuming you want to set a color
     )
         await message.channel.send(embed=embed)
 
