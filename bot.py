@@ -56,6 +56,15 @@ async def on_message(message):
                 await message.channel.send("Invalid choice. Please choose a valid option from the list.")
         except asyncio.TimeoutError:
             await message.channel.send("You took too long to respond.")
+     
+    elif message.content.lower().startswith(("hp food buff", "hp buff")):
+        embed = discord.Embed(
+            title='HP Buff House Addresses',
+            description='1. House Address: 1010455 LVL 10 (Fridge)\n 2. House Address: 3191130 LVL 10 (Fridge)\n 3. House Address: 1011945 LVL 10 (Fridge)\n 4. House Address: 3092003 LVL 10 (Fridge)',
+            color=discord.Color.green()
+        )
+        await message.channel.send(embed=embed)
+        
 
 async def handle_builds(message, check):
     build_embed = discord.Embed(
