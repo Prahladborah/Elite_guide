@@ -239,7 +239,7 @@ Code: 2110000 LVL 8
         ''',
             color=discord.Color.green()
         )
-         await message.channel.send(embed=embed)
+        await message.channel.send(embed=embed)
     elif message.content.lower().startswith(("drop buff", "Droprate buff","luck buff","ice cream buff")):
         embed = discord.Embed(
             title='Feel free to take this potato buff if you are a potato',
@@ -272,7 +272,7 @@ Code: 7057777 LVL 6
         ''',
         color=discord.Color.dark_green()
     )
-        await message.channel.send(embed=embed)
+       await message.channel.send(embed=embed)
    elif message.content.lower().startswith(("dte water food buff", "dte water buff")):
     embed = discord.Embed(
         title='DTE Water Food Buff Codes',
