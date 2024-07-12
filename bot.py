@@ -102,7 +102,7 @@ Code: 2110000 LVL 10
             color=discord.Color.gold()
         )
         await message.channel.send(embed=embed)
-    elif message.content.lower().startswith(("weapon atk food buff", "weapon atk buff","weapon buff")):
+    elif message.content.lower().startswith(("weapon atk food buff", "weapon atk buff","weapon buff","watk buff")):
         embed = discord.Embed(
             title='WEAPON ATK Food Buff Codes',
             description='''
