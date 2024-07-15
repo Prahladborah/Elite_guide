@@ -601,6 +601,7 @@ Abandoned District: Ruins Summit
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
+        
     elif message.content.lower().startswith(("info Devil Dango","info devil","info dango")):
         embed = discord.Embed(
             title='Devil Dango [Weapon Crysta]',
@@ -621,6 +622,7 @@ Otsukimi Event Venue: Crater Zone
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
+        
     elif message.content.lower().startswith(("info Hexter")):
         embed = discord.Embed(
             title='Hexter [Enhancer Crysta (Red)]',
@@ -644,9 +646,10 @@ Used For Don Profundo
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
+        
     elif message.content.lower().startswith(("info Vlam the Flame Dragon","info vlam","info dragon")):
         embed = discord.Embed(
-            title='',
+            title='Vlam the Flame Dragon [Enhancer Crysta (Red)]',
             description='''
 ================================
 Stat/Effect               Amount
@@ -665,6 +668,7 @@ Divido Spring
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
+        
     elif message.content.lower().startswith(("info doctor pom pom","info pom pom","info doctor")):
         embed = discord.Embed(
             title='Doctor Pom Pom [Armor Crysta]',
@@ -685,6 +689,7 @@ Archfiend's Throne
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
+        
     elif message.content.lower().startswith(("info Trickster Dragon Mimyugon","info Trickster","info Dragon")):
         embed = discord.Embed(
             title='Trickster Dragon Mimyugon [Enhancer Crysta (Red)]',
@@ -705,6 +710,7 @@ Operation Zone: Cockpit Area
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
+        
     elif message.content.lower().startswith(("info Altadar")):
         embed = discord.Embed(
             title='Altadar [Armor Crysta]',
@@ -732,6 +738,7 @@ Event Venue
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
+        
     elif message.content.lower().startswith(("info lilicarolla","info lili")):
         embed = discord.Embed(
             title='Lilicarolla [Enhancer Crysta (Blue)]',
@@ -751,6 +758,7 @@ Frozen Falls: Area 1
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
+        
     elif message.content.lower().startswith(("info Sibylares","info Siby")):
         embed = discord.Embed(
             title='Sibylares [Armor Crysta]',
@@ -772,6 +780,7 @@ Phasma Forest: Area 3
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
+        
     elif message.content.lower().startswith(("info Bangrudom","info Bang")):
         embed = discord.Embed(
             title='Bangrudom [Armor Crysta]',
@@ -798,6 +807,7 @@ El Scaro: Back Alley
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
+        
     elif message.content.lower().startswith(("info Sicanokami","info Sica")):
         embed = discord.Embed(
             title='Sicanokami [Enhancer Crysta (Purple)]',
@@ -822,6 +832,7 @@ El Scaro: Back Alley
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
+        
     elif message.content.lower().startswith(("info Torexesa","info Torex")):
         embed = discord.Embed(
             title='Torexesa [Enhancer Crysta (Blue)]',
@@ -844,6 +855,7 @@ Aquacity: Parliament Hall
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
+        
     elif message.content.lower().startswith(("info Aubergine Dragon Auvio","info Auvio","info Dragon")):
         embed = discord.Embed(
             title='Aubergine Dragon Auvio [Special Crysta]',
@@ -867,6 +879,7 @@ Rakau Plains (Event)
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
+        
     elif message.content.lower().startswith(("info ageladanios","info agel")):
         embed = discord.Embed(
             title='Ageladanios [Enhancer Crysta (Blue)]',
@@ -891,6 +904,7 @@ Used for Wiltileaf
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
+        
     elif message.content.lower().startswith(("info Wiltileaf","info Wilti")):
         embed = discord.Embed(
             title='Wiltileaf [Enhancer Crysta (Blue)]',
@@ -913,6 +927,7 @@ Eumano Village Ruins: Area 2
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
+        
     elif message.content.lower().startswith(("info Charugon")):
         embed = discord.Embed(
             title='Charugon [Enhancer Crysta (Blue)]',
@@ -935,6 +950,7 @@ Boma Konda: Underground Area
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
+        
     elif message.content.lower().startswith(("info Alfenix")):
         embed = discord.Embed(
             title='Alfenix [Enhancer Crysta (Yellow)]',
@@ -957,6 +973,7 @@ El Scaro
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
+        
     elif message.content.lower().startswith(("info dark lord","info dark")):
         embed = discord.Embed(
             title='†Dark Lord† [Enhancer Crysta (Yellow)]',
@@ -979,6 +996,7 @@ Event
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
+        
     elif message.content.lower().startswith(("info Gordo")):
         embed = discord.Embed(
             title='Gordo [Enhancer Crysta (Yellow)]',
@@ -1000,6 +1018,7 @@ Eumano Glade
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
+        
     elif message.content.lower().startswith(("info Evil Lefina")):
         embed = discord.Embed(
             title='Evil Lefina [Additional Crysta]',
@@ -1023,6 +1042,7 @@ El Scaro
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
+        
     elif message.content.lower().startswith(("info Jibril III","info Jibril")):
         embed = discord.Embed(
             title='Jibril III [Enhancer Crysta (Yellow)]',
@@ -1048,6 +1068,7 @@ No game no life
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
+        
     elif message.content.lower().startswith(("info Armasite")):
         embed = discord.Embed(
             title='Armasite [Weapon Crysta]',
@@ -1066,6 +1087,7 @@ Fractum Sector: Area 1
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
+        
     elif message.content.lower().startswith(("info irestida")):
         embed = discord.Embed(
             title='Irestida [Enhancer Crysta (Red)]',
@@ -1088,6 +1110,7 @@ Nov Diela Central
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
+        
     elif message.content.lower().startswith(("info oculasignio","info ocul")):
         embed = discord.Embed(
             title='Oculasignio [Enhancer Crysta (Red)]',
@@ -1109,6 +1132,7 @@ Mt. Vulcani: Summit
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
+        
     elif message.content.lower().startswith(("info Finstern The Dark Dragon","info Finstern","info Dragon")):
         embed = discord.Embed(
             title='Finstern the Dark Dragon [Enhancer Crysta (Red)]',
@@ -1130,6 +1154,7 @@ Dark Dragon Shrine: Near the Top
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
+        
     elif message.content.lower().startswith(("info Mozto Machina","info Mozto")):
         embed = discord.Embed(
             title='Mozto Machina [Enhancer Crysta (Red)]',
@@ -1151,6 +1176,7 @@ Large Demi Machina Factory:
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
+        
     elif message.content.lower().startswith(("info Iron Empress","info Iron")):
         embed = discord.Embed(
             title='Iron Empress [Armor Crysta]',
@@ -1172,6 +1198,7 @@ Event
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
+        
     elif message.content.lower().startswith(("info Black Velly")):
         embed = discord.Embed(
             title='Black Velly [Enhancer Crysta (Green)]',
@@ -1194,6 +1221,7 @@ xmas event
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
+        
     elif message.content.lower().startswith(("info Dr Leonardo","info Leonardo","info dr Leo")):
         embed = discord.Embed(
             title='Dr. Leonardo II [Enhancer Crysta (Green)]',
@@ -1216,6 +1244,7 @@ Eagle Talon Collab Venue
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
+        
     elif message.content.lower().startswith(("info Underwater Ruins Monster","info Underwater","info URM")):
         embed = discord.Embed(
             title='Underwater Ruins Monster[Enhancer Crysta(Yellow)]',
@@ -1240,6 +1269,7 @@ Adaro (High Difficulty)
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
+        
     elif message.content.lower().startswith(("info Narumi Hina","info Narumi")):
         embed = discord.Embed(
             title='Narumi Hina [Additional Crysta]',
@@ -1258,6 +1288,7 @@ Event Yashiro azuki collab
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
+        
     elif message.content.lower().startswith(("info seele")):
         embed = discord.Embed(
             title='Seele Zauga [Special Crysta]',
@@ -1276,7 +1307,8 @@ Shrine of the Goddess of Species
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
-    elif message.content.lower().startswith(("info Star wiz","info Star wizard")):
+        
+    elif message.content.lower().startswith(("info star wiz","info star wizard")):
         embed = discord.Embed(
             title='Star Wizard [Special Crysta]',
             description='''
@@ -1323,7 +1355,7 @@ Rokoko City Ruins
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
-    elif message.content.lower().startswith(("info Diark")):
+    elif message.content.lower().startswith(("info diark","diark")):
         embed = discord.Embed(
             title='Diark [Enhancer Crysta (Red)]',
             description='''
@@ -1343,7 +1375,7 @@ Obtained From
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
-    elif message.content.lower().startswith(("info Gegner")):
+    elif message.content.lower().startswith(("info Gegner","gener")):
         embed = discord.Embed(
             title='Gegner [Enhancer Crysta (Green)]',
             description='''
@@ -1402,7 +1434,7 @@ Obtained From
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
-    elif message.content.lower().startswith(("info scream shadow")):
+    elif message.content.lower().startswith(("info scream shadow","info scream")):
         embed = discord.Embed(
             title='Scream Shadow [Special Crysta]',
             description='''
@@ -1423,148 +1455,370 @@ Obtained From
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
-    elif message.content.lower().startswith(("info ")):
+    elif message.content.lower().startswith(("info Gordo","info gordo")):
         embed = discord.Embed(
-            title='',
+            title='Gordo [Enhancer Crysta (Yellow)]',
             description='''
+=================================
+Stat/Effect                Amount
+ATK %                        7
+ASPD %                      80
+Long Range Damage %        -15
+=================================
+Upgrade for
+Wandering Wheel
+=================================
+Obtained From
+Eumano Glade
+=================================
         ''',
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
-    elif message.content.lower().startswith(("info ")):
+    elif message.content.lower().startswith(("info amargon","info amar")):
         embed = discord.Embed(
-            title='',
+            title='Amargon [Enhancer Crysta (Yellow)]',
             description='''
+=================================
+Stat/Effect                Amount
+MaxHP %                     30
+MaxMP                     -300
+ASPD                       800
+=================================
+Upgrade for
+Candela II
+=================================
+Obtained From
+El Scaro: Back Alley
+=================================
         ''',
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
-    elif message.content.lower().startswith(("info ")):
+    elif message.content.lower().startswith(("info rhinosaur","info rhino")):
         embed = discord.Embed(
-            title='',
+            title='Rhinosaur [Enhancer Crysta (Blue)]',
             description='''
+=================================
+Stat/Effect                Amount
+MaxHP %                     10
+ATK %                        5
+ASPD %                      15
+=================================
+Upgrade for
+Minotaur
+=================================
+Obtained From
+Fugitive Lake Swamp: Area 3
+=================================
         ''',
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
-    elif message.content.lower().startswith(("info ")):
+    elif message.content.lower().startswith(("info hero potum III")):
         embed = discord.Embed(
-            title='',
+            title='Hero Potum III [Enhancer Crysta (Red)]',
             description='''
+=================================
+Stat/Effect                Amount
+MaxHP %                     12
+Accuracy %                  16
+Aggro %                     18
+Fractional Barrier %        14
+=================================
+Upgrade for
+Hero Potum II
+=================================
+Obtained From
+Archfiend's Throne
+million download event
+=================================
         ''',
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
-    elif message.content.lower().startswith(("info ")):
+    elif message.content.lower().startswith(("info filrocas")):
         embed = discord.Embed(
-            title='',
+            title='Filrocas [Enhancer Crysta (Green)]',
             description='''
+=================================
+Stat/Effect                Amount
+MaxHP %                     60
+Physical Resistance %       -7
+Magic Resistance %          -7
+=================================
+Upgrade for
+Eroded Pilz
+---------------------------------
+Knuckle only:
+Aggro %                     15
+1-Handed Sword only:
+Aggro %                     15
+=================================
+Obtained From
+Royal Dragon Cocoon Chamber
+=================================
         ''',
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
-    elif message.content.lower().startswith(("info ")):
+    elif message.content.lower().startswith(("info Prudent Blue Shadow","info prudent")):
         embed = discord.Embed(
-            title='',
+            title='Prudent Blue Shadow [Enhancer Crysta (Yellow)]',
             description='''
+=================================
+Stat/Effect                Amount
+MaxMP                     -150
+Short Range Damage %         8
+Long Range Damage %          8
+Unsheathe Attack %           8
+=================================
+Upgrade for
+Baphomela
+=================================
+Obtained From
+Noeliel Castle: B4F
+Dutannen (Max)
+=================================
+
         ''',
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
-    elif message.content.lower().startswith(("info ")):
+    elif message.content.lower().startswith(("info Blood Smeared Crystal","info blood","info smeared")):
         embed = discord.Embed(
-            title='',
+            title='Blood Smeared Crystal [Enhancer Crysta (Red)]',
             description='''
+=================================
+Stat/Effect                Amount
+Critical Damage              6
+Aggro %                     10
+Attack MP Recovery           7
+=================================
+Upgrade for
+Evil Magic Sword
+=================================
+Obtained From
+Avant Plastida: Area 1
+Bloodie Crystal (Lv 207)
+=================================
+
         ''',
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
-    elif message.content.lower().startswith(("info ")):
+    elif message.content.lower().startswith(("info Torexesa","info torex")):
         embed = discord.Embed(
-            title='',
+            title='Torexesa [Enhancer Crysta (Blue)]',
             description='''
+=================================
+Stat/Effect                Amount
+MaxMP                     -200
+ATK %                      10
+MATK %                     10
+Attack MP Recovery          4
+=================================
+Upgrade for
+Black Shadow
+=================================
+Obtained From
+Aquacity: Parliament Hall
+=================================
+
         ''',
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
-    elif message.content.lower().startswith(("info ")):
+    elif message.content.lower().startswith(("info Dominaredor","info domi","info dominar")):
         embed = discord.Embed(
-            title='',
+            title='Dominaredor [Enhancer Crysta (Purple)]',
             description='''
+=================================
+Stat/Effect                Amount
+ATK %                        8
+MATK %                       8
+ASPD %                      20
+=================================
+Upgrade for
+Lalvada
+---------------------------------
+Reduce Dmg (Floor) %        20
+=================================
+Obtained From
+Frozen Falls: Depths
+=================================
+
         ''',
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
-    elif message.content.lower().startswith(("info ")):
+    elif message.content.lower().startswith(("info Etoise")):
         embed = discord.Embed(
-            title='',
+            title='Etoise [Enhancer Crysta (Purple)]',
             description='''
+=================================
+Stat/Effect                Amount
+ASPD                      1100
+CSPD %                     -70
+Critical Rate %            40
+Motion Speed %              5
+=================================
+Upgrade for
+Volgagon
+=================================
+Obtained From
+High Difficulty Boss Battle 
+Event Venue
+Etoise
+=================================
+
         ''',
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
-    elif message.content.lower().startswith(("info ")):
+    elif message.content.lower().startswith(("info Stellar Ooze II","info stellar")):
         embed = discord.Embed(
-            title='',
+            title='Stellar Ooze II [Special Crysta]',
             description='''
+=================================
+Stat/Effect                Amount
+Natural MP Regen %         15
+MaxMP                      150
+ATK %                       5
+Physical Pierce %           5
+Revive Time %              60
+Unsheathe Attack %          5
+---------------------------------
+Reduce Dmg (Bowling) %     15
+=================================
+Obtained From
+Stellar Ooze (Hell) (Lv 270)
+Event
+=================================
         ''',
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
-    elif message.content.lower().startswith(("info ")):
+    elif message.content.lower().startswith(("info Red Ash Dragon Rudis","info red ash")):
         embed = discord.Embed(
-            title='',
+            title='Red Ash Dragon Rudis [Enhancer Crysta (Blue)]',
             description='''
+=================================
+Stat/Effect                Amount
+MaxHP                     -300
+MaxMP                      200
+Accuracy %                  5
+Critical Rate              -7
+Short Range Damage %        9
+=================================
+Upgrade for
+Gravicep
+=================================
+Obtained From
+Espuma Dome: Entrance
+=================================
+
         ''',
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
-    elif message.content.lower().startswith(("info ")):
+        
+    elif message.content.lower().startswith(("info Trus","info trus")):
         embed = discord.Embed(
-            title='',
+            title='Trus [Special Crysta]',
             description='''
+=================================
+Stat/Effect                Amount
+Physical Pierce %           10
+Guard Break %               10
+Stun Unavailable             1
+---------------------------------
+2-Handed Sword only:
+Guard Power %               25
+Guard Recharge %            25
+=================================
+Upgrade for
+(To be specified)
+=================================
+Obtained From
+Propulsion System Zone: Power Tank
+=================================
+
         ''',
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
-    elif message.content.lower().startswith(("info ")):
+    elif message.content.lower().startswith(("info DX Fighter II")):
         embed = discord.Embed(
-            title='',
+            title='DX Fighter II [Enhancer Crysta (Green)]',
             description='''
+=================================
+Stat/Effect                Amount
+MaxHP                     6000
+ATK %                        3
+Accuracy %                  15
+Short Range Damage %         6
+Fractional Barrier %         5
+=================================
+Upgrade for
+DX Fighter
+=================================
+Obtained From
+Eagle Talon Collab Venue
+=================================
+
         ''',
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
-    elif message.content.lower().startswith(("info ")):
+    elif message.content.lower().startswith(("info baavgai")):
         embed = discord.Embed(
-            title='',
+            title='Baavgai [Enhancer Crysta (Green)]',
             description='''
+=================================
+Stat/Effect                Amount
+MaxHP                     7000
+Critical Damage              7
+Short Range Damage %         5
+=================================
+Upgrade for
+Dreamy Scarlet Sakura
+=================================
+Obtained From
+Mt. Sakuraten: Summit
+=================================
+
         ''',
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
-    elif message.content.lower().startswith(("info ")):
+    elif message.content.lower().startswith(("info zapo")):
         embed = discord.Embed(
-            title='',
+            title='Zapo [Enhancer Crysta (Green)]',
             description='''
-        ''',
-        color=discord.Color.blurple()
-    )
-        await message.channel.send(embed=embed)
-    elif message.content.lower().startswith(("info ")):
-        embed = discord.Embed(
-            title='',
-            description='''
+=================================
+Stat/Effect                Amount
+MaxHP                     -400
+MaxMP                     -400
+ATK %                       10
+Critical Rate               10
+=================================
+Upgrade for
+Arachnidemon
+---------------------------------
+Shield only:
+STR %                        1
+Short Range Damage %         5
+=================================
+Obtained From
+Puerta Islands: Adit
+=================================
+
         ''',
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
     
-  
-  
-  
-  
-  
 
     
          
