@@ -623,7 +623,7 @@ Otsukimi Event Venue: Crater Zone
     )
         await message.channel.send(embed=embed)
         
-    elif message.content.lower().startswith(("info Hexter")):
+    elif message.content.lower().startswith(("info Hexter","hexter")):
         embed = discord.Embed(
             title='Hexter [Enhancer Crysta (Red)]',
             description='''
@@ -642,12 +642,13 @@ Witch's Woods Depths
 =================================
 Used For Don Profundo
 =================================
+
         ''',
         color=discord.Color.blurple()
     )
         await message.channel.send(embed=embed)
         
-    elif message.content.lower().startswith(("info Vlam the Flame Dragon","info vlam","info dragon")):
+    elif message.content.lower().startswith(("info Vlam the Flame Dragon","vlam","info dragon")):
         embed = discord.Embed(
             title='Vlam the Flame Dragon [Enhancer Crysta (Red)]',
             description='''
@@ -690,7 +691,7 @@ Archfiend's Throne
     )
         await message.channel.send(embed=embed)
         
-    elif message.content.lower().startswith(("info Trickster Dragon Mimyugon","info Trickster","info Dragon")):
+    elif message.content.lower().startswith(("info Trickster Dragon Mimyugon","Trickster","info Dragon")):
         embed = discord.Embed(
             title='Trickster Dragon Mimyugon [Enhancer Crysta (Red)]',
             description='''
@@ -711,7 +712,7 @@ Operation Zone: Cockpit Area
     )
         await message.channel.send(embed=embed)
         
-    elif message.content.lower().startswith(("info Altadar")):
+    elif message.content.lower().startswith(("info Altadar","altadar")):
         embed = discord.Embed(
             title='Altadar [Armor Crysta]',
             description='''
@@ -739,7 +740,7 @@ Event Venue
     )
         await message.channel.send(embed=embed)
         
-    elif message.content.lower().startswith(("info lilicarolla","info lili")):
+    elif message.content.lower().startswith(("info lilicarolla","info lili","lilicarolla")):
         embed = discord.Embed(
             title='Lilicarolla [Enhancer Crysta (Blue)]',
             description='''
@@ -759,7 +760,7 @@ Frozen Falls: Area 1
     )
         await message.channel.send(embed=embed)
         
-    elif message.content.lower().startswith(("info Sibylares","info Siby")):
+    elif message.content.lower().startswith(("info Sibylares","info Siby","sibylares")):
         embed = discord.Embed(
             title='Sibylares [Armor Crysta]',
             description='''
@@ -781,7 +782,7 @@ Phasma Forest: Area 3
     )
         await message.channel.send(embed=embed)
         
-    elif message.content.lower().startswith(("info Bangrudom","info Bang")):
+    elif message.content.lower().startswith(("info Bangrudom","info Bang","bangrudom")):
         embed = discord.Embed(
             title='Bangrudom [Armor Crysta]',
             description='''
@@ -808,7 +809,7 @@ El Scaro: Back Alley
     )
         await message.channel.send(embed=embed)
         
-    elif message.content.lower().startswith(("info Sicanokami","info Sica")):
+    elif message.content.lower().startswith(("info Sicanokami","info Sica","sicanokami")):
         embed = discord.Embed(
             title='Sicanokami [Enhancer Crysta (Purple)]',
             description='''
@@ -833,7 +834,7 @@ El Scaro: Back Alley
     )
         await message.channel.send(embed=embed)
         
-    elif message.content.lower().startswith(("info Torexesa","info Torex")):
+    elif message.content.lower().startswith(("info Torexesa","info Torex","Torexesa")):
         embed = discord.Embed(
             title='Torexesa [Enhancer Crysta (Blue)]',
             description='''
