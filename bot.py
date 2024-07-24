@@ -579,7 +579,7 @@ Code: 7057777 LVL 6
     )
         await message.channel.send(embed=embed)
     
-    elif message.content.lower().startswith(("info Don Profundo","info don pro","info profundo")):
+    elif message.content.lower().startswith(("info Don Profundo","info don pro","info profundo","don profundo")):
         embed = discord.Embed(
             title='Don Profundo [Enhancer Crysta (Red)]',
             description='''
@@ -602,7 +602,7 @@ Abandoned District: Ruins Summit
     )
         await message.channel.send(embed=embed)
         
-    elif message.content.lower().startswith(("info Devil Dango","info devil","info dango")):
+    elif message.content.lower().startswith(("info Devil Dango","info devil","info dango","devil dango")):
         embed = discord.Embed(
             title='Devil Dango [Weapon Crysta]',
             description='''
@@ -648,7 +648,7 @@ Used For Don Profundo
     )
         await message.channel.send(embed=embed)
         
-    elif message.content.lower().startswith(("info Vlam the Flame Dragon","vlam","info dragon")):
+    elif message.content.lower().startswith(("info Vlam the Flame Dragon","vlam","info dragon","vlam")):
         embed = discord.Embed(
             title='Vlam the Flame Dragon [Enhancer Crysta (Red)]',
             description='''
@@ -670,7 +670,7 @@ Divido Spring
     )
         await message.channel.send(embed=embed)
         
-    elif message.content.lower().startswith(("info doctor pom pom","info pom pom","info doctor")):
+    elif message.content.lower().startswith(("info doctor pom pom","info pom pom","info doctor","doc pom","doctor pom")):
         embed = discord.Embed(
             title='Doctor Pom Pom [Armor Crysta]',
             description='''
@@ -691,7 +691,7 @@ Archfiend's Throne
     )
         await message.channel.send(embed=embed)
         
-    elif message.content.lower().startswith(("info Trickster Dragon Mimyugon","Trickster","info Dragon")):
+    elif message.content.lower().startswith(("info Trickster Dragon Mimyugon","Trickster","info Dragon","trickster")):
         embed = discord.Embed(
             title='Trickster Dragon Mimyugon [Enhancer Crysta (Red)]',
             description='''
@@ -740,7 +740,7 @@ Event Venue
     )
         await message.channel.send(embed=embed)
         
-    elif message.content.lower().startswith(("info lilicarolla","info lili","lilicarolla")):
+    elif message.content.lower().startswith(("info lilicarolla","info lili","lilicarolla","lili")):
         embed = discord.Embed(
             title='Lilicarolla [Enhancer Crysta (Blue)]',
             description='''
@@ -760,7 +760,7 @@ Frozen Falls: Area 1
     )
         await message.channel.send(embed=embed)
         
-    elif message.content.lower().startswith(("info Sibylares","info Siby","sibylares")):
+    elif message.content.lower().startswith(("info Sibylares","info Siby","sibylares","siby")):
         embed = discord.Embed(
             title='Sibylares [Armor Crysta]',
             description='''
@@ -782,7 +782,7 @@ Phasma Forest: Area 3
     )
         await message.channel.send(embed=embed)
         
-    elif message.content.lower().startswith(("info Bangrudom","info Bang","bangrudom")):
+    elif message.content.lower().startswith(("info Bangrudom","info Bang","bangrudom","bang*)):
         embed = discord.Embed(
             title='Bangrudom [Armor Crysta]',
             description='''
@@ -809,7 +809,7 @@ El Scaro: Back Alley
     )
         await message.channel.send(embed=embed)
         
-    elif message.content.lower().startswith(("info Sicanokami","info Sica","sicanokami")):
+    elif message.content.lower().startswith(("info Sicanokami","info Sica","sicanokami","sica")):
         embed = discord.Embed(
             title='Sicanokami [Enhancer Crysta (Purple)]',
             description='''
@@ -834,16 +834,16 @@ El Scaro: Back Alley
     )
         await message.channel.send(embed=embed)
         
-    elif message.content.lower().startswith(("info Torexesa","info Torex","Torexesa")):
+    elif message.content.lower().startswith(("info Torexesa","info Torex","Torexesa","torex")):
         embed = discord.Embed(
             title='Torexesa [Enhancer Crysta (Blue)]',
-            description='''
+            description= '''
 =================================
 Stat/Effect                Amount
 MaxMP                     -200
 ATK %                      10
 MATK %                     10
-Attack MP Recovery          4
+Attack Mp recover          4
 =================================
 Upgrade for
 Black Shadow
