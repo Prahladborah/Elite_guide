@@ -782,7 +782,7 @@ Phasma Forest: Area 3
     )
         await message.channel.send(embed=embed)
         
-    elif message.content.lower().startswith(("info Bangrudom","info Bang","bangrudom","bang*)):
+    elif message.content.lower().startswith(("info Bangrudom","info Bang","bangrudom","bang")):
         embed = discord.Embed(
             title='Bangrudom [Armor Crysta]',
             description='''
