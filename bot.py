@@ -1,6 +1,7 @@
 import os
 import discord
 from discord.ext import commands
+from discord_slash import SlashCommand
 from dotenv import load_dotenv
 from discord.ui import Button, View
 import difflib
