@@ -14,10 +14,9 @@ if TOKEN is None:
     raise ValueError("DISCORD_TOKEN environment variable is not set")
 
 
-# Define the bot
 intents = discord.Intents.default()
-intents.messages = True
-intents.message_content = True
+intents.message_content = True 
+
 bot = commands.Bot(command_prefix='/', intents=intents)
 
 
