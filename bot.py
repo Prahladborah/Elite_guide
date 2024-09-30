@@ -328,81 +328,75 @@ Address: Sofya - Ward A- 69
     },    
 }
 
-class BuffView(View):
-    def __init__(self, ctx, buff_keys):
-        super().__init__(timeout=60)
-        self.ctx = ctx
-        self.buff_keys = buff_keys
-        self.current_index = 0
+# Helper function for fuzzy search
+def search_closest_match(query, data_keys):
+    return difflib.get_close_matches(query, data_keys, n=1, cutoff=0.6)
 
-        self.add_item(Button(label="Previous", style=discord.ButtonStyle.primary, custom_id="prev", disabled=True))
-        self.add_item(Button(label="Next", style=discord.ButtonStyle.primary, custom_id="next"))
-
-    async def interaction_check(self, interaction: discord.Interaction):
-        return interaction.user == self.ctx.author
-
-    @discord.ui.button(label="Previous", style=discord.ButtonStyle.primary, disabled=True)
-    async def previous_button_callback(self, button, interaction):
-        self.current_index -= 1
-        await self.update_buttons(interaction)
-
-    @discord.ui.button(label="Next", style=discord.ButtonStyle.primary)
-    async def next_button_callback(self, button, interaction):
-        self.current_index += 1
-        await self.update_buttons(interaction)
-
-    async def update_buttons(self, interaction):
-        for item in self.children:
-            if isinstance(item, discord.ui.Button):
-                if item.custom_id == "prev":
-                    item.disabled = self.current_index == 0
-                elif item.custom_id == "next":
-                    item.disabled = self.current_index == len(self.buff_keys) - 1
-
-        buff_key = self.buff_keys[self.current_index]
-        buff_info = buff_data[buff_key]
-
-        embed = discord.Embed(
-            title=buff_info['title'],
-            description=buff_info['description'],
-            color=buff_info['color']
-        )
-
-        await interaction.response.edit_message(embed=embed, view=self)
-
-@bot.command()
-async def buffs(ctx):
-    buff_keys = list(buff_data.keys())
-    initial_buff = buff_keys[0]
-
-    embed = discord.Embed(
-        title=buff_data[initial_buff]["title"],
-        description=buff_data[initial_buff]["description"],
-        color=buff_data[initial_buff]["color"]
-    )
-
-    view = BuffView(ctx, buff_keys)
-    await ctx.send(embed=embed, view=view)
-
-
-@bot.command()
-async def search_buff(ctx, *, query: str):
-    buff_keys = list(buff_data.keys())
-    # Use difflib to find the closest match to the search query
-    close_matches = difflib.get_close_matches(query.lower(), buff_keys, n=1, cutoff=0.6)
-
-    if close_matches:
-        buff_key = close_matches[0]
-        buff_info = buff_data[buff_key]
-        embed = discord.Embed(
-            title=buff_info['title'],
-            description=buff_info['description'],
-            color=buff_info['color']
-        )
-        await ctx.send(embed=embed)
+# Command to fetch buff data with pagination and fuzzy search
+@bot.command(name='buff')
+async def get_buff(ctx, *, buff_name: str):
+    # Convert the buff name to lowercase to match dictionary keys
+    buff_name = buff_name.lower()
+    
+    # Check if the buff exists in the dictionary
+    if buff_name in buff_data:
+        buff_info = buff_data[buff_name]
+        await send_paginated_buff(ctx, buff_info)
     else:
-        await ctx.send(f"No matching buffs found for '{query}'.")
+        # Perform fuzzy search if an exact match isn't found
+        closest_match = search_closest_match(buff_name, buff_data.keys())
+        
+        if closest_match:
+            suggested_buff = closest_match[0]
+            await ctx.send(f"Did you mean '{suggested_buff}'?")
+        else:
+            await ctx.send(f"No buff found for '{buff_name}'. Please check the name and try again.")
 
+# Function to send paginated buff data
+async def send_paginated_buff(ctx, buff_info):
+    pages = buff_info["description"].split("\n")  # Split description by lines for pagination
+    
+    current_page = 0
+
+    # Create the initial embed
+    embed = discord.Embed(
+        title=buff_info["title"],
+        description=pages[current_page],
+        color=buff_info["color"]
+    )
+    
+    # Send the embed with buttons for navigation
+    message = await ctx.send(embed=embed, view=create_pagination_view(current_page, pages, buff_info))
+
+# Function to create a view with buttons for pagination
+def create_pagination_view(current_page, pages, buff_info):
+    view = View()
+    
+    # Add 'Previous' button
+    if current_page > 0:
+        previous_button = Button(label="Previous", style=discord.ButtonStyle.primary)
+        previous_button.callback = lambda interaction: update_page(interaction, current_page - 1, pages, buff_info)
+        view.add_item(previous_button)
+    
+    # Add 'Next' button
+    if current_page < len(pages) - 1:
+        next_button = Button(label="Next", style=discord.ButtonStyle.primary)
+        next_button.callback = lambda interaction: update_page(interaction, current_page + 1, pages, buff_info)
+        view.add_item(next_button)
+    
+    return view
+
+# Function to update the page
+async def update_page(interaction, new_page, pages, buff_info):
+    # Create a new embed with the updated page content
+    embed = discord.Embed(
+        title=buff_info["title"],
+        description=pages[new_page],
+        color=buff_info["color"]
+    )
+    
+    # Edit the message to update the embed
+    await interaction.response.edit_message(embed=embed, view=create_pagination_view(new_page, pages, buff_info))
 
 
 async def handle_builds(message, check):
