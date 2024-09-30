@@ -328,15 +328,6 @@ Address: Sofya - Ward A- 69
     },    
 }
 
-import discord
-from discord.ext import commands
-from discord.ui import Button, View
-import difflib  # For search functionality
-
-buff_data = {
-    # Your buff_data here
-}
-
 class BuffView(View):
     def __init__(self, ctx, buff_keys):
         super().__init__(timeout=60)
